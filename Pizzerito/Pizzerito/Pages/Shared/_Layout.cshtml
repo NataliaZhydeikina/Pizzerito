@@ -1,0 +1,196 @@
+﻿@*In order to update cart count on _Layout use Http and HttpContextAccessor*@
+
+
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using Pizzerito.Utility
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pizzerito</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="~/css/forms.css" />
+    <link rel="stylesheet" href="~/css/button.css" />
+    <link rel="stylesheet" href="~/css/card.css" />
+    <link rel="stylesheet" href="~/css/details.css" />
+    <link rel="stylesheet" href="~/css/accessDenied.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css" />
+
+</head>
+<body class="" cz-shortcut-listen="true" style="padding-top: 140px;">
+    <div id="instructions" style="padding-top:0px;">
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-info-circle" aria-hidden="true"></i> </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container col-12">
+                        <div class="row">
+                            <div class="col-2 p-4">
+                                <img src="~/images/PizzarittoLogo.png" height="190" alt="CoolBrand" class="rotated">
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-4 pt-4">
+                                <h2 class="modal-title pt-2" id="exampleModalLabel" style="color: #5e9ca0; text-align: center;"><strong>Pizzerito Ordering System - Demo</strong></h2>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h4><span style="color: #993300; padding-bottom:5px;">Pizzerito Demo Ordering System&nbsp;</span><strong style="color: #993300;"><a style="color: #993300;" href="https://github.com/NataliaZhydeikina/Pizzerito" target="_blank" rel="noopener">GitHub Repo Here</a></strong></h4>
+                    <h4><span style="color: #008080;">Website Overview:</span></h4>
+                    <ul>
+                        <li>
+                            Following are the Admin User Account that exists by default <i style="color:dodgerblue">(Password: Admin123*)</i>:
+                            <ul>
+                                <li>Manager User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">admin@gmail.com</i></li>
+                                <li>Front Desk User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">front@gmail.com</i></li>
+                                <li>Pizza Maker&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">kitchen@gmail.com</i></li>
+                                <li>Customer User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">customer@gmail.com</i></li>
+                            </ul>
+                        </li>
+                        <li>You can create new accounts as you wish! If you prefer to create any accounts please login using the Admin/Manager User and navigate to Users inside Content Management.&nbsp;</li>
+                        @*<li>Create/Edit/Delete functionalities have been disabled for all users inside Content Management (Admin) portal to avoid misuse of website.</li>*@
+                        <li>If any Manager account locks any other user using Content Management portal, they will be able to lock them for only 2 min and system will unlock them after 2min.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <header>
+
+        <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary box-shadow mb-3">
+            <div class="container">
+                <a asp-area="" asp-page="/Index" class="navbar-brand">
+                    <img src="~/images/PizzarittoLogo2.png" alt="CoolBrand">
+                </a>
+                @*<a class="navbar-brand text-white" asp-area="" asp-page="/Index">Pizzerito</a>*@
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        @if (User.IsInRole(SD.ManagerRole))
+                        {
+                            <li class="nav-item dropdown">
+                                <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">
+                                    Admin
+                                </a>
+                                <div class="dropdown-menu bg-primary">
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">Add Categories</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Toppings/Index">Add Toppings</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/ToppingType/Index">Add Topping Types</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustFlavor/Index">Add Crust Flavors</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustType/Index">Add Crust Types</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/PizzaSize/Index">Add Pizza Sizes</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/MenuType/Index">Add New Menu Item</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/User/Index">Add Users</a>
+                                </div>
+                            </li>
+                        }
+
+                        @*Visable only to manager, kitchen and front desk *@
+
+                        @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.PizzaMakerRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/ManageOrder">Manager Order</a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.FrontDeskRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order Pickup</a>
+                            </li>
+                        }
+                        @* Added to include customer order history tab *@
+                        @if (User.IsInRole(SD.CustomerRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order History</a>
+                            </li>
+                        }
+                        @*-----End*@
+
+                        //added for customer view
+                        @*Visable only to customer *@
+                        @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ShoppingCart) != null)
+                        {
+                            <li>
+                                <a asp-page="/Customer/Cart/Index" class="nav-link text-white-50">
+                                    @{
+                                        var count = HttpContextAccessor.HttpContext.Session.GetInt32(SD.ShoppingCart);
+                                    }
+                                    <i class="fas fa-shopping-cart"></i> &nbsp; (@count)
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a asp-page="/Customer/Cart/Index" class="nav-link text-white-50">
+                                    <i class="fas fa-shopping-cart"></i> &nbsp; (0)
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Pizzerito - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/400e8fa2ac.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.4.10/cleave.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.4.10/addons/cleave-phone.us.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=sikk4pj7xl8crfqkvbkfd30w9kkxmfmjseyf2q6juc705818"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
