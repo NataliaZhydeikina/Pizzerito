@@ -15,11 +15,11 @@ namespace Pizzerito.DataAccess
 
         }
 
-       /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+      /* protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-        }*/
-
+        }
+        */
 
         public DbSet<Category> Category { get; set; }
         public DbSet<Toppings> Toppings { get; set; }

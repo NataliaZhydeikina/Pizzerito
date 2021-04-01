@@ -6,7 +6,7 @@ with other projects so much I had to create a new one to solidify my understandi
 that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the specific user that is logged in. 
 
 Website is now up! 
-Azure Deployed [HERE](https://pizzerito20210401151818.azurewebsites.net).   
+Azure Deployed [HERE](https://pizzerito20210401170600.azurewebsites.net).   
 
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
 
