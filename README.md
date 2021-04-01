@@ -5,11 +5,6 @@ This project was completed using my knowledge of ASP.NET Core Razor pages with M
 with other projects so much I had to create a new one to solidify my understanding. This application is a typical pizza ordering system
 that has different users such as manager, cook, driver, and customer roles. Each screen facilitates the specific user that is logged in. 
 
-
- ```diff
- -NOTE: Work in progress. Project is nearly complete. 
-```
-
 Website is now up! 
 Azure Deployed [HERE](https://pizzerito20210401151818.azurewebsites.net).   
 
