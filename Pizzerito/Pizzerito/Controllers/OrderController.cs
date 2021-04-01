@@ -28,7 +28,7 @@ namespace Pizzerito.Controllers
         //Updated to get data from OrderList page for Cancelled, Completed, or Inprocessed orders 
         [HttpGet]
         [Authorize]
-        public  IActionResult Get(string status = null)
+        public  IActionResult Get(string status = null,DateTime startDate = new DateTime(), DateTime endDate = new DateTime())
         {
             List<OrderDetailsVM> orderListVM = new List<OrderDetailsVM>();
 
@@ -70,6 +70,8 @@ namespace Pizzerito.Controllers
                 }
             }
 
+            Console.WriteLine(startDate);
+            OrderHeaderList = OrderHeaderList.Where(o => o.OrderDate >= startDate && o.OrderDate <= endDate);
             foreach (OrderHeader item in OrderHeaderList)
             {
                 OrderDetailsVM individual = new OrderDetailsVM

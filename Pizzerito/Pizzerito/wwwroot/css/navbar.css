@@ -4,6 +4,7 @@
 	background: rgb(44, 124, 37);
 	background: linear-gradient(0deg, rgb(44, 124, 37) 0%, rgb(16, 92, 32) 78%);
 	height: 10vh;
+	min-height: 100px;
 }
 
 a.navbar-brand {
