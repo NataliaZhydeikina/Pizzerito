@@ -11,7 +11,7 @@ that has different users such as manager, cook, driver, and customer roles. Each
 ```
 
 Website is now up! 
-Azure Deployed [HERE](https://Pizzerito.azurewebsites.net).   
+Azure Deployed [HERE](https://pizzerito20210401151818.azurewebsites.net).   
 
 ASP.NET Core 3.1 Razor Pages With MVC Continuation Demo 
 
