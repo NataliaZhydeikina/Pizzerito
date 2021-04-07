@@ -19,6 +19,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Pizzerito.Utility;
 using Stripe;
 using Pizzerito.DataAccess.Data.Initializer;
+using Pizzerito.Middlwares;
 
 namespace Pizzerito
 {
@@ -92,6 +93,8 @@ namespace Pizzerito
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
+            app.UseMiddleware<HttpRequestBodyMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -104,6 +107,7 @@ namespace Pizzerito
                 app.UseHsts();
             }
 
+            app.UseMiddleware<UnhandledExceptionMiddleware>();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //added session 

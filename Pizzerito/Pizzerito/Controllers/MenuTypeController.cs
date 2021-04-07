@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 
 namespace Pizzerito.Controllers
@@ -14,12 +15,14 @@ namespace Pizzerito.Controllers
     [ApiController]
     public class MenuTypeController : Controller
     {
+        private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
         //Will be deleting images from server
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public MenuTypeController(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
+        public MenuTypeController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
+            _logger = logger;
             _unitOfWork = unitOfWork;
             _hostingEnvironment = hostEnvironment;
         }
@@ -27,6 +30,8 @@ namespace Pizzerito.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            _logger.LogInformation($"Enter /api/menutype");
+            _logger.LogInformation($"Return menu types, returning HTTP 200 - OK");
             return Json(new
             {
                 data = _unitOfWork.PizzaType
@@ -38,12 +43,13 @@ namespace Pizzerito.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-
+            _logger.LogInformation($"Enter /api/menutype/{id}");
             try
             {
                 var objFromDb = _unitOfWork.PizzaType.GetFirstOrDefault(p => p.Id == id);
                 if (objFromDb == null)
                 {
+                    _logger.LogError($"Error while deleting menu type, no such object, id {id}");
                     return Json(new { success = false, message = "Error while deleting" });
                 }
 
@@ -55,14 +61,14 @@ namespace Pizzerito.Controllers
                 }
                 _unitOfWork.PizzaType.Remove(objFromDb);
                 _unitOfWork.Save();
-
+                _logger.LogInformation($"Delete image from root");
             }
             catch (Exception ex)
-            {
-
+            { 
+                _logger.LogError($"Error while deleting menu type, {ex.Message} {ex.Data}");
                 return Json(new { success = true, message = "Error while deleting" });
             }
-
+            _logger.LogInformation($"Delete successful");
             return Json(new { success = true, message = "Delete successful" });
         }
 

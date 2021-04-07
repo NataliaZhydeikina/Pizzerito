@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Models.ViewModels;
@@ -17,10 +18,12 @@ namespace Pizzerito.Controllers
     [ApiController]
     public class OrderController : Controller 
     {
+        private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
 
-        public OrderController(IUnitOfWork unitOfWork)
+        public OrderController(ILogger<OrderController> logger, IUnitOfWork unitOfWork)
         {
+            _logger = logger;
             _unitOfWork = unitOfWork;
         }
         //Updated to get data from OrderList page for Cancelled, Completed, or Inprocessed orders 
@@ -28,6 +31,7 @@ namespace Pizzerito.Controllers
         [Authorize]
         public  IActionResult Get(string status = null,DateTime startDate = new DateTime(), DateTime endDate = new DateTime())
         {
+            _logger.LogInformation($"Enter /api/order");
             List<OrderDetailsVM> orderListVM = new List<OrderDetailsVM>();
 
             IEnumerable<OrderHeader> OrderHeaderList;
@@ -49,6 +53,7 @@ namespace Pizzerito.Controllers
             //Added to get data from OrderList page for Cancelled, Completed, or Inprocessed orders 
             if (status == "cancelled")
             {
+                _logger.LogInformation($"Find all cancelled, refund or rejected orders");
                 OrderHeaderList = OrderHeaderList.Where(o => o.Status == SD.StatusCancelled 
                                                         || o.Status == SD.StatusRefunded
                                                         || o.Status == SD.PaymentStatusRejected);
@@ -57,16 +62,19 @@ namespace Pizzerito.Controllers
             {
                 if (status == "completed")
                 {
+                    _logger.LogInformation($"Find all completed orders");
                     OrderHeaderList = OrderHeaderList.Where(o => o.Status == SD.StatusCompleted);
                 }
                 else
                 {
+                    _logger.LogInformation($"Find all ready, in progress submitted or payment pending orders");
                     OrderHeaderList = OrderHeaderList.Where(o => o.Status == SD.StatusReady 
                                                                 || o.Status == SD.StatusInProcess 
                                                                 || o.Status == SD.StatusSubmitted
                                                                 || o.Status == SD.PaymentStatusPending);
                 }
             }
+            _logger.LogInformation($"Fiter orders by date: start-{startDate}, end-{endDate}");
             OrderHeaderList = OrderHeaderList.Where(o => o.OrderDate >= startDate && o.OrderDate <= endDate);
             foreach (OrderHeader item in OrderHeaderList)
             {
@@ -80,6 +88,7 @@ namespace Pizzerito.Controllers
             // Add to orderListVM
             orderListVM.Add(individual);
             }
+            _logger.LogInformation($"Return all orders, returning HTTP 200 - OK");
             return Json(new { data = orderListVM });
         }
     }
