@@ -17,14 +17,12 @@ namespace Pizzerito.Controllers
     [ApiController]
     public class OrderController : Controller 
     {
-
         private readonly IUnitOfWork _unitOfWork;
 
         public OrderController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-
         //Updated to get data from OrderList page for Cancelled, Completed, or Inprocessed orders 
         [HttpGet]
         [Authorize]
@@ -69,8 +67,6 @@ namespace Pizzerito.Controllers
                                                                 || o.Status == SD.PaymentStatusPending);
                 }
             }
-
-            Console.WriteLine(startDate);
             OrderHeaderList = OrderHeaderList.Where(o => o.OrderDate >= startDate && o.OrderDate <= endDate);
             foreach (OrderHeader item in OrderHeaderList)
             {

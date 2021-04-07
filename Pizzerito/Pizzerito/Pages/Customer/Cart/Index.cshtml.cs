@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Utility;
@@ -16,11 +17,14 @@ namespace Pizzerito.Pages.Customer.Cart
     [Authorize]
     public class IndexModel : PageModel
     {
+        private readonly ILogger _logger;
+        public string Message { get; set; }
         private readonly IUnitOfWork _unitOfWork;
 
-        public IndexModel(IUnitOfWork unitOfWork)
+        public IndexModel(IUnitOfWork unitOfWork, ILogger<IndexModel> logger)
         {
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         // view model to add 
@@ -61,6 +65,8 @@ namespace Pizzerito.Pages.Customer.Cart
                 }
 
             }
+            Message = $"Shopping card page visited at {DateTime.UtcNow.ToLongTimeString()}";
+            _logger.LogInformation(Message);
 
         }
 
