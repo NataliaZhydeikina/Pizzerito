@@ -88,6 +88,7 @@ namespace Pizzerito.Controllers
             // Add to orderListVM
             orderListVM.Add(individual);
             }
+       
             _logger.LogInformation($"Return all orders, returning HTTP 200 - OK");
             return Json(new { data = orderListVM });
         }

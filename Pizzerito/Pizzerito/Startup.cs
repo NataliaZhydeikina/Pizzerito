@@ -94,6 +94,7 @@ namespace Pizzerito
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             app.UseMiddleware<HttpRequestBodyMiddleware>();
+            app.UseMiddleware<UnhandledExceptionMiddleware>();
 
             if (env.IsDevelopment())
             {
@@ -107,7 +108,7 @@ namespace Pizzerito
                 app.UseHsts();
             }
 
-            app.UseMiddleware<UnhandledExceptionMiddleware>();
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //added session 

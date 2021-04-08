@@ -87,8 +87,4 @@ namespace Pizzerito.Models
         [NotMapped]
         public virtual Toppings Toppings { get; set; }
     }
-
-   
-
-
 }
