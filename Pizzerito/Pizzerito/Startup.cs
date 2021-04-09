@@ -6,20 +6,18 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pizzerito.DataAccess;
-using Microsoft.Extensions.Options;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.DataAccess.Data.Repository;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Pizzerito.Utility;
 using Stripe;
 using Pizzerito.DataAccess.Data.Initializer;
 using Pizzerito.Middlwares;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Pizzerito
 {
@@ -28,6 +26,7 @@ namespace Pizzerito
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -35,6 +34,13 @@ namespace Pizzerito
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddMvc()
+            services.AddLocalization(o =>
+            {
+                // We will put our translations in a folder called Resources
+                o.ResourcesPath = "Resources";
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ApplicationDatabase")));
@@ -50,7 +56,7 @@ namespace Pizzerito
                 options.Cookie.IsEssential = true;
             });
 
-            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix); 
              
             services.ConfigureApplicationCookie(options =>
             {
@@ -65,7 +71,7 @@ namespace Pizzerito
             {
                 o.JsonSerializerOptions.IgnoreNullValues = true;
                 o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-            });
+            }).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -117,6 +123,13 @@ namespace Pizzerito
             app.UseAuthentication();
             app.UseAuthorization();
 
+            var supportedCultures = new[] { "en", "ua" };
+            var localizationOptions = new RequestLocalizationOptions()
+                .SetDefaultCulture(supportedCultures[1])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+
+            app.UseRequestLocalization(localizationOptions);
             app.UseMvc();
 
             StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];

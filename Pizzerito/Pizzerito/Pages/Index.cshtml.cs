@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 
 namespace Pizzerito.Pages
 {
@@ -20,6 +21,10 @@ namespace Pizzerito.Pages
         public IActionResult OnGet()
         {
             return RedirectToPage("/Customer/Home/Index");
+        }
+        public string GetCulture()
+        {
+            return $"CurrentCulture:{CultureInfo.CurrentCulture.Name}, CurrentUICulture:{CultureInfo.CurrentUICulture.Name}";
         }
     }
 }
