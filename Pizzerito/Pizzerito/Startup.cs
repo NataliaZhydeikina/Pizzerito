@@ -35,11 +35,9 @@ namespace Pizzerito
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddMvc()
-            services.AddLocalization(o =>
-            {
-                // We will put our translations in a folder called Resources
-                o.ResourcesPath = "Resources";
-            });
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddControllersWithViews()
+                .AddViewLocalization();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

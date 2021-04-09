@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add Categories" xml:space="preserve">
-    <value>Додати категорію</value>
+  <data name="AddCategories" xml:space="preserve">
+    <value>Add Categories</value>
   </data>
-  <data name="Add Crust Flavors" xml:space="preserve">
-    <value>Додайте смаки скоринки</value>
+  <data name="AddCrustFlavors" xml:space="preserve">
+    <value>Add Crust Flavors</value>
   </data>
-  <data name="Add Crust Types" xml:space="preserve">
+  <data name="AddCrustTypes" xml:space="preserve">
     <value>Додайте типи корочок</value>
   </data>
-  <data name="Add New Menu Item" xml:space="preserve">
+  <data name="AddNewMenuItem" xml:space="preserve">
     <value>Додати новий пункт меню</value>
   </data>
-  <data name="Add Pizza Sizes" xml:space="preserve">
+  <data name="AddPizzaSizes" xml:space="preserve">
     <value>Додайте розміри піци</value>
   </data>
-  <data name="Add Topping Types" xml:space="preserve">
-    <value>Додати тип топінгу</value>
-  </data>
-  <data name="Add Toppings" xml:space="preserve">
+  <data name="AddToppings" xml:space="preserve">
     <value>Додати топінг</value>
   </data>
-  <data name="Add Users" xml:space="preserve">
+  <data name="AddToppingTypes" xml:space="preserve">
+    <value>Додати тип топінгу</value>
+  </data>
+  <data name="AddUsers" xml:space="preserve">
     <value>Додати користувачів</value>
   </data>
   <data name="Admin" xml:space="preserve">
