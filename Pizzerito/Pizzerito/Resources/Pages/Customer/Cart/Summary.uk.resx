@@ -117,13 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Additional Instructions" xml:space="preserve">
+    <value>Додаткові вказівки</value>
+  </data>
   <data name="Back to Cart" xml:space="preserve">
-    <value>Назад к корзине</value>
+    <value>Назад до кошику</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ім'я</value>
   </data>
   <data name="Order Summary" xml:space="preserve">
-    <value>Итог заказа</value>
+    <value>Підсумок замовлення</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>Номер телефону</value>
+  </data>
+  <data name="Pickup Date" xml:space="preserve">
+    <value>Вибрати дату</value>
   </data>
   <data name="PickUp Details:" xml:space="preserve">
-    <value>Детали:</value>
+    <value>Деталі:</value>
+  </data>
+  <data name="Pickup Time" xml:space="preserve">
+    <value>Вибрати час</value>
+  </data>
+  <data name="Pizza to Go!" xml:space="preserve">
+    <value>Піца на винос!</value>
+  </data>
+  <data name="Pizzerito Restaurant" xml:space="preserve">
+    <value>Ресторан Pizzerito</value>
+  </data>
+  <data name="Place Order" xml:space="preserve">
+    <value>Замовити</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Кількість</value>
+  </data>
+  <data name="Total (USD)" xml:space="preserve">
+    <value>Сума ($)</value>
   </data>
 </root>
