@@ -1,9 +1,8 @@
 ﻿@page
 @model Pizzerito.Pages.Admin.Toppings.UpsertModel
-
-
-
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <div class="container">
@@ -14,13 +13,13 @@
                 <input type="hidden" asp-for="ToppingsItemObj.Toppings.Id" />
             }
             <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
-                <h2 class="text-primary font-weight-light">@(Model.ToppingsItemObj.Toppings.Id!=0 ? "Update " : "Create New ")Topping Item</h2>
+                <h2 class="text-primary font-weight-light">@(Model.ToppingsItemObj.Toppings.Id!=0 ? @SharedLocalizer["Update"] : @SharedLocalizer["Create New"]) &nbsp; @Localizer["Topping Item"]</h2>
             </div>
 
             <div class="col-8 pt-3">
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="ToppingsItemObj.Toppings.Name" ></label>
+                        <label asp-for="ToppingsItemObj.Toppings.Name">@Localizer["Topping name"]</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();" asp-for="ToppingsItemObj.Toppings.Name" />
@@ -29,17 +28,17 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="ToppingsItemObj.Toppings.ToppingTypeId"></label>
+                        <label asp-for="ToppingsItemObj.Toppings.ToppingTypeId">@Localizer["Topping type id"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.ToppingsItemObj.Toppings.ToppingTypeId,
                                                     Model.ToppingsItemObj.ToppingTypeList,
-                                                    "- Please select a Topping Type -",
+                                                    @Localizer["- Please select a Topping Type -"].Value,
                                                     new { @class = "form-control", })
                         <span class="text-danger" asp-validation-for="ToppingsItemObj.Toppings.ToppingTypeId"></span>
                     </div>
                 </div>
-            
+
 
                 <div class="form-group row">
 
@@ -49,15 +48,15 @@
 
                                 @if (Model.ToppingsItemObj.Toppings.Id != 0)
                                 {
-                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                    <button type="submit" class="btn btn-primary form-control">@SharedLocalizer["Update"]</button>
                                 }
                                 else
                                 {
-                                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                            <button type="submit" class="btn btn-primary form-control">@SharedLocalizer["Create"]</button>
                                 }
                             </div>
                             <div class="col-6">
-                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
+                                <a asp-page="./Index" class="btn btn-success form-control">@SharedLocalizer["Back to List"]</a>
                             </div>
                         </div>
                     </div>

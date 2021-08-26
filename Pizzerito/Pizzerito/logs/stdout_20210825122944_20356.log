@@ -1,0 +1,449 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\natai\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (182ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (165ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (206ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [AspNetRoles] AS [a]
+              WHERE [a].[Name] = N'Manager') THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Request GET: /
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Executed DbCommand (278ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[Discriminator] IN (N'IdentityUser', N'ApplicationUser') AND ([a].[Id] = @__p_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Executed DbCommand (141ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+      FROM [AspNetUserClaims] AS [a]
+      WHERE [a].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Executed DbCommand (120ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a0].[Name]
+      FROM [AspNetUserRoles] AS [a]
+      INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+      WHERE [a].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Executed DbCommand (130ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Executed DbCommand (119ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[ClaimType], [a].[ClaimValue]
+      FROM [AspNetRoleClaims] AS [a]
+      WHERE [a].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Mvc.RedirectToRouteResult[1]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId: => /Index
+      Executing RedirectToPageResult, redirecting to /Customer/Home/Index.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Customer/Home  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId:
+      Request GET: /Customer/Home
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/ RequestId:8000004b-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53c-4a0243ba12c5088e., TraceId:2af1f53c-4a0243ba12c5088e, ParentId:
+      Request finished in 3214.073ms 302 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Executed DbCommand (122ms) [Parameters=[@__claim_Value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[ApplicationUserId], [s].[Count], [s].[PizzaTypeId]
+      FROM [ShoppingCart] AS [s]
+      WHERE [s].[ApplicationUserId] = @__claim_Value_0
+info: Microsoft.AspNetCore.Session.DistributedSession[2]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Accessing expired session, Key:ee0ba83e-310e-f969-4be6-bc4636743ed1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Image], [p].[Name], [p].[PizzaCrustFlavorId], [p].[PizzaCrustTypeId], [p].[PizzaSizeId], [p].[Price], [p].[ToppingEightId], [p].[ToppingFiveId], [p].[ToppingFourId], [p].[ToppingOneId], [p].[ToppingSevenId], [p].[ToppingSixId], [p].[ToppingThreeId], [p].[ToppingTwoId], [p].[ToppingTypeId], [c].[Id], [c].[DisplayOrder], [c].[Name], [t].[Id], [t].[Name], [p1].[Id], [p1].[CrustType], [p1].[CrustTypeDescription], [p2].[Id], [p2].[CrustFlavor], [p2].[CrustFlavorDescription], [p0].[Id], [p0].[Size]
+      FROM [PizzaType] AS [p]
+      INNER JOIN [PizzaSize] AS [p0] ON [p].[PizzaSizeId] = [p0].[Id]
+      INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+      INNER JOIN [ToppingType] AS [t] ON [p].[ToppingTypeId] = [t].[Id]
+      INNER JOIN [PizzaCrustType] AS [p1] ON [p].[PizzaCrustTypeId] = [p1].[Id]
+      INNER JOIN [PizzaCrustFlavor] AS [p2] ON [p].[PizzaCrustFlavorId] = [p2].[Id]
+      ORDER BY [p0].[Size]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Executed DbCommand (118ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[DisplayOrder], [c].[Name]
+      FROM [Category] AS [c]
+      ORDER BY [c].[DisplayOrder]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      Executed DbCommand (118ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name]
+      FROM [ToppingType] AS [t]
+      ORDER BY [t].[Id]
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Session.DistributedSession[3]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId:
+      Session started; Key:ee0ba83e-310e-f969-4be6-bc4636743ed1, Id:b1790ba6-e559-bfe2-a241-c9af4fdf6f66
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Customer/Home RequestId:8000004d-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53d-4a0243ba12c5088e., TraceId:2af1f53d-4a0243ba12c5088e, ParentId:
+      Request finished in 1940.02ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/lib/bootstrap/dist/css/bootstrap.css RequestId:8000002e-0001-f400-b63f-84710c7967bb, SpanId:|2af1f53e-4a0243ba12c5088e., TraceId:2af1f53e-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/lib/bootstrap/dist/css/bootstrap.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/lib/bootstrap/dist/css/bootstrap.css RequestId:8000002e-0001-f400-b63f-84710c7967bb, SpanId:|2af1f53e-4a0243ba12c5088e., TraceId:2af1f53e-4a0243ba12c5088e, ParentId:
+      Request GET: /lib/bootstrap/dist/css/bootstrap.css
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/site.css RequestId:8000004f-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53f-4a0243ba12c5088e., TraceId:2af1f53f-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/site.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/site.css RequestId:8000004f-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53f-4a0243ba12c5088e., TraceId:2af1f53f-4a0243ba12c5088e, ParentId:
+      Request GET: /css/site.css
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/navbar.css RequestId:80000090-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f540-4a0243ba12c5088e., TraceId:2af1f540-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/navbar.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/navbar.css RequestId:80000090-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f540-4a0243ba12c5088e., TraceId:2af1f540-4a0243ba12c5088e, ParentId:
+      Request GET: /css/navbar.css
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/site.css RequestId:8000004f-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53f-4a0243ba12c5088e., TraceId:2af1f53f-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/navbar.css RequestId:80000090-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f540-4a0243ba12c5088e., TraceId:2af1f540-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/navbar.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\navbar.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/site.css RequestId:8000004f-0000-f300-b63f-84710c7967bb, SpanId:|2af1f53f-4a0243ba12c5088e., TraceId:2af1f53f-4a0243ba12c5088e, ParentId:
+      Request finished in 72.2285ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/navbar.css RequestId:80000090-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f540-4a0243ba12c5088e., TraceId:2af1f540-4a0243ba12c5088e, ParentId:
+      Request finished in 98.1266ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/lib/bootstrap/dist/css/bootstrap.css RequestId:8000002e-0001-f400-b63f-84710c7967bb, SpanId:|2af1f53e-4a0243ba12c5088e., TraceId:2af1f53e-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/lib/bootstrap/dist/css/bootstrap.css RequestId:8000002e-0001-f400-b63f-84710c7967bb, SpanId:|2af1f53e-4a0243ba12c5088e., TraceId:2af1f53e-4a0243ba12c5088e, ParentId:
+      Request finished in 262.8261ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/forms.css RequestId:80000030-0001-f400-b63f-84710c7967bb, SpanId:|2af1f541-4a0243ba12c5088e., TraceId:2af1f541-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/forms.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/button.css RequestId:80000044-0001-f200-b63f-84710c7967bb, SpanId:|2af1f542-4a0243ba12c5088e., TraceId:2af1f542-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/button.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/card.css RequestId:80000051-0000-f300-b63f-84710c7967bb, SpanId:|2af1f543-4a0243ba12c5088e., TraceId:2af1f543-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/card.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/forms.css RequestId:80000030-0001-f400-b63f-84710c7967bb, SpanId:|2af1f541-4a0243ba12c5088e., TraceId:2af1f541-4a0243ba12c5088e, ParentId:
+      Request GET: /css/forms.css
+
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/button.css RequestId:80000044-0001-f200-b63f-84710c7967bb, SpanId:|2af1f542-4a0243ba12c5088e., TraceId:2af1f542-4a0243ba12c5088e, ParentId:
+      Request GET: /css/button.css
+
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/card.css RequestId:80000051-0000-f300-b63f-84710c7967bb, SpanId:|2af1f543-4a0243ba12c5088e., TraceId:2af1f543-4a0243ba12c5088e, ParentId:
+      Request GET: /css/card.css
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/button.css RequestId:80000044-0001-f200-b63f-84710c7967bb, SpanId:|2af1f542-4a0243ba12c5088e., TraceId:2af1f542-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/button.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\button.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/forms.css RequestId:80000030-0001-f400-b63f-84710c7967bb, SpanId:|2af1f541-4a0243ba12c5088e., TraceId:2af1f541-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/forms.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\forms.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/card.css RequestId:80000051-0000-f300-b63f-84710c7967bb, SpanId:|2af1f543-4a0243ba12c5088e., TraceId:2af1f543-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/card.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\card.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/button.css RequestId:80000044-0001-f200-b63f-84710c7967bb, SpanId:|2af1f542-4a0243ba12c5088e., TraceId:2af1f542-4a0243ba12c5088e, ParentId:
+      Request finished in 86.5916ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/card.css RequestId:80000051-0000-f300-b63f-84710c7967bb, SpanId:|2af1f543-4a0243ba12c5088e., TraceId:2af1f543-4a0243ba12c5088e, ParentId:
+      Request finished in 86.7657ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/forms.css RequestId:80000030-0001-f400-b63f-84710c7967bb, SpanId:|2af1f541-4a0243ba12c5088e., TraceId:2af1f541-4a0243ba12c5088e, ParentId:
+      Request finished in 104.6772ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/details.css RequestId:80000032-0001-f400-b63f-84710c7967bb, SpanId:|2af1f544-4a0243ba12c5088e., TraceId:2af1f544-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/details.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/details.css RequestId:80000032-0001-f400-b63f-84710c7967bb, SpanId:|2af1f544-4a0243ba12c5088e., TraceId:2af1f544-4a0243ba12c5088e, ParentId:
+      Request GET: /css/details.css
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/accessDenied.css RequestId:80000046-0001-f200-b63f-84710c7967bb, SpanId:|2af1f545-4a0243ba12c5088e., TraceId:2af1f545-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/accessDenied.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/footer.css RequestId:80000092-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f546-4a0243ba12c5088e., TraceId:2af1f546-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/footer.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/accessDenied.css RequestId:80000046-0001-f200-b63f-84710c7967bb, SpanId:|2af1f545-4a0243ba12c5088e., TraceId:2af1f545-4a0243ba12c5088e, ParentId:
+      Request GET: /css/accessDenied.css
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/details.css RequestId:80000032-0001-f400-b63f-84710c7967bb, SpanId:|2af1f544-4a0243ba12c5088e., TraceId:2af1f544-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/details.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\details.css'
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/footer.css RequestId:80000092-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f546-4a0243ba12c5088e., TraceId:2af1f546-4a0243ba12c5088e, ParentId:
+      Request GET: /css/footer.css
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/details.css RequestId:80000032-0001-f400-b63f-84710c7967bb, SpanId:|2af1f544-4a0243ba12c5088e., TraceId:2af1f544-4a0243ba12c5088e, ParentId:
+      Request finished in 104.4577ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/accessDenied.css RequestId:80000046-0001-f200-b63f-84710c7967bb, SpanId:|2af1f545-4a0243ba12c5088e., TraceId:2af1f545-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/accessDenied.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\accessDenied.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/css/footer.css RequestId:80000092-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f546-4a0243ba12c5088e., TraceId:2af1f546-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/css/footer.css'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\css\footer.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/accessDenied.css RequestId:80000046-0001-f200-b63f-84710c7967bb, SpanId:|2af1f545-4a0243ba12c5088e., TraceId:2af1f545-4a0243ba12c5088e, ParentId:
+      Request finished in 111.8853ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/footer.css RequestId:80000092-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f546-4a0243ba12c5088e., TraceId:2af1f546-4a0243ba12c5088e, ParentId:
+      Request finished in 106.11ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/lib/jquery/dist/jquery.min.js RequestId:80000048-0001-f200-b63f-84710c7967bb, SpanId:|2af1f547-4a0243ba12c5088e., TraceId:2af1f547-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/lib/jquery/dist/jquery.min.js  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/lib/jquery/dist/jquery.min.js RequestId:80000048-0001-f200-b63f-84710c7967bb, SpanId:|2af1f547-4a0243ba12c5088e., TraceId:2af1f547-4a0243ba12c5088e, ParentId:
+      Request GET: /lib/jquery/dist/jquery.min.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/lib/jquery/dist/jquery.min.js RequestId:80000048-0001-f200-b63f-84710c7967bb, SpanId:|2af1f547-4a0243ba12c5088e., TraceId:2af1f547-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\lib\jquery\dist\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/lib/jquery/dist/jquery.min.js RequestId:80000048-0001-f200-b63f-84710c7967bb, SpanId:|2af1f547-4a0243ba12c5088e., TraceId:2af1f547-4a0243ba12c5088e, ParentId:
+      Request finished in 31.9215ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/lib/bootstrap/dist/js/bootstrap.bundle.min.js RequestId:8000004a-0001-f200-b63f-84710c7967bb, SpanId:|2af1f548-4a0243ba12c5088e., TraceId:2af1f548-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/lib/bootstrap/dist/js/bootstrap.bundle.min.js RequestId:8000004a-0001-f200-b63f-84710c7967bb, SpanId:|2af1f548-4a0243ba12c5088e., TraceId:2af1f548-4a0243ba12c5088e, ParentId:
+      Request GET: /lib/bootstrap/dist/js/bootstrap.bundle.min.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/lib/bootstrap/dist/js/bootstrap.bundle.min.js RequestId:8000004a-0001-f200-b63f-84710c7967bb, SpanId:|2af1f548-4a0243ba12c5088e., TraceId:2af1f548-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/lib/bootstrap/dist/js/bootstrap.bundle.min.js RequestId:8000004a-0001-f200-b63f-84710c7967bb, SpanId:|2af1f548-4a0243ba12c5088e., TraceId:2af1f548-4a0243ba12c5088e, ParentId:
+      Request finished in 35.157ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/js/site.js RequestId:80000053-0000-f300-b63f-84710c7967bb, SpanId:|2af1f549-4a0243ba12c5088e., TraceId:2af1f549-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/js/site.js RequestId:80000053-0000-f300-b63f-84710c7967bb, SpanId:|2af1f549-4a0243ba12c5088e., TraceId:2af1f549-4a0243ba12c5088e, ParentId:
+      Request GET: /js/site.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/js/site.js RequestId:80000053-0000-f300-b63f-84710c7967bb, SpanId:|2af1f549-4a0243ba12c5088e., TraceId:2af1f549-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\js\site.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/js/site.js RequestId:80000053-0000-f300-b63f-84710c7967bb, SpanId:|2af1f549-4a0243ba12c5088e., TraceId:2af1f549-4a0243ba12c5088e, ParentId:
+      Request finished in 30.75ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/js/slider.js RequestId:8000004c-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54a-4a0243ba12c5088e., TraceId:2af1f54a-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/js/slider.js  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/js/slider.js RequestId:8000004c-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54a-4a0243ba12c5088e., TraceId:2af1f54a-4a0243ba12c5088e, ParentId:
+      Request GET: /js/slider.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/js/slider.js RequestId:8000004c-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54a-4a0243ba12c5088e., TraceId:2af1f54a-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/js/slider.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\js\slider.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/js/slider.js RequestId:8000004c-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54a-4a0243ba12c5088e., TraceId:2af1f54a-4a0243ba12c5088e, ParentId:
+      Request finished in 24.8918ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/PizzarittoLogo.png RequestId:80000094-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54b-4a0243ba12c5088e., TraceId:2af1f54b-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/PizzarittoLogo.png  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/PizzarittoLogo.png RequestId:80000094-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54b-4a0243ba12c5088e., TraceId:2af1f54b-4a0243ba12c5088e, ParentId:
+      Request GET: /images/PizzarittoLogo.png
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/PizzarittoLogo.png RequestId:80000094-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54b-4a0243ba12c5088e., TraceId:2af1f54b-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/PizzarittoLogo.png'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\PizzarittoLogo.png'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/PizzarittoLogo.png RequestId:80000094-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54b-4a0243ba12c5088e., TraceId:2af1f54b-4a0243ba12c5088e, ParentId:
+      Request finished in 23.3592ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/PizzarittoLogo2.png RequestId:80000096-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54c-4a0243ba12c5088e., TraceId:2af1f54c-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/PizzarittoLogo2.png  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/PizzarittoLogo2.png RequestId:80000096-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54c-4a0243ba12c5088e., TraceId:2af1f54c-4a0243ba12c5088e, ParentId:
+      Request GET: /images/PizzarittoLogo2.png
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/PizzarittoLogo2.png RequestId:80000096-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54c-4a0243ba12c5088e., TraceId:2af1f54c-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/PizzarittoLogo2.png'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\PizzarittoLogo2.png'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/PizzarittoLogo2.png RequestId:80000096-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54c-4a0243ba12c5088e., TraceId:2af1f54c-4a0243ba12c5088e, ParentId:
+      Request finished in 25.641ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg RequestId:80000098-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54d-4a0243ba12c5088e., TraceId:2af1f54d-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg RequestId:80000098-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54d-4a0243ba12c5088e., TraceId:2af1f54d-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg RequestId:80000098-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54d-4a0243ba12c5088e., TraceId:2af1f54d-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/cfd8f79d-5223-4ecf-a98b-15bff6d928cb.jpg RequestId:80000098-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f54d-4a0243ba12c5088e., TraceId:2af1f54d-4a0243ba12c5088e, ParentId:
+      Request finished in 30.7741ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg RequestId:8000004e-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54e-4a0243ba12c5088e., TraceId:2af1f54e-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg RequestId:8000004e-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54e-4a0243ba12c5088e., TraceId:2af1f54e-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg RequestId:8000004e-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54e-4a0243ba12c5088e., TraceId:2af1f54e-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\0f8fe263-758e-4d83-839d-928add377c94.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/0f8fe263-758e-4d83-839d-928add377c94.jpg RequestId:8000004e-0001-f200-b63f-84710c7967bb, SpanId:|2af1f54e-4a0243ba12c5088e., TraceId:2af1f54e-4a0243ba12c5088e, ParentId:
+      Request finished in 26.2078ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg RequestId:80000034-0001-f400-b63f-84710c7967bb, SpanId:|2af1f54f-4a0243ba12c5088e., TraceId:2af1f54f-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg RequestId:80000034-0001-f400-b63f-84710c7967bb, SpanId:|2af1f54f-4a0243ba12c5088e., TraceId:2af1f54f-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg RequestId:80000034-0001-f400-b63f-84710c7967bb, SpanId:|2af1f54f-4a0243ba12c5088e., TraceId:2af1f54f-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/8d82a87e-6823-4844-bf53-c0b127cfcbbd.jpg RequestId:80000034-0001-f400-b63f-84710c7967bb, SpanId:|2af1f54f-4a0243ba12c5088e., TraceId:2af1f54f-4a0243ba12c5088e, ParentId:
+      Request finished in 27.4138ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg RequestId:80000036-0001-f400-b63f-84710c7967bb, SpanId:|2af1f550-4a0243ba12c5088e., TraceId:2af1f550-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg RequestId:80000036-0001-f400-b63f-84710c7967bb, SpanId:|2af1f550-4a0243ba12c5088e., TraceId:2af1f550-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg RequestId:8000009a-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f551-4a0243ba12c5088e., TraceId:2af1f551-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg RequestId:8000009a-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f551-4a0243ba12c5088e., TraceId:2af1f551-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg RequestId:80000036-0001-f400-b63f-84710c7967bb, SpanId:|2af1f550-4a0243ba12c5088e., TraceId:2af1f550-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/00ceaacf-702b-47c2-8ea3-a7eca32bcaba.jpg RequestId:80000036-0001-f400-b63f-84710c7967bb, SpanId:|2af1f550-4a0243ba12c5088e., TraceId:2af1f550-4a0243ba12c5088e, ParentId:
+      Request finished in 41.6545ms 200 image/jpeg
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg RequestId:8000009a-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f551-4a0243ba12c5088e., TraceId:2af1f551-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/5102bc24-bf39-4f2a-bafb-7b0fa5126ee1.jpg RequestId:8000009a-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f551-4a0243ba12c5088e., TraceId:2af1f551-4a0243ba12c5088e, ParentId:
+      Request finished in 48.3785ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg RequestId:8000009c-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f552-4a0243ba12c5088e., TraceId:2af1f552-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg RequestId:80000040-0003-f600-b63f-84710c7967bb, SpanId:|2af1f553-4a0243ba12c5088e., TraceId:2af1f553-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg RequestId:8000009c-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f552-4a0243ba12c5088e., TraceId:2af1f552-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg
+
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg RequestId:80000040-0003-f600-b63f-84710c7967bb, SpanId:|2af1f553-4a0243ba12c5088e., TraceId:2af1f553-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg RequestId:80000040-0003-f600-b63f-84710c7967bb, SpanId:|2af1f553-4a0243ba12c5088e., TraceId:2af1f553-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg RequestId:8000009c-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f552-4a0243ba12c5088e., TraceId:2af1f552-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\5107ecf9-900f-4416-9968-e72284badb31.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/946fed78-dc5d-4b35-8e4d-a9155bc89f36.jpg RequestId:80000040-0003-f600-b63f-84710c7967bb, SpanId:|2af1f553-4a0243ba12c5088e., TraceId:2af1f553-4a0243ba12c5088e, ParentId:
+      Request finished in 49.4248ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/5107ecf9-900f-4416-9968-e72284badb31.jpg RequestId:8000009c-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f552-4a0243ba12c5088e., TraceId:2af1f552-4a0243ba12c5088e, ParentId:
+      Request finished in 64.3235ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg RequestId:8000009e-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f554-4a0243ba12c5088e., TraceId:2af1f554-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg RequestId:8000009e-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f554-4a0243ba12c5088e., TraceId:2af1f554-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg RequestId:8000009e-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f554-4a0243ba12c5088e., TraceId:2af1f554-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\e1422e9f-dee8-4031-94c7-3325241e93b0.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/e1422e9f-dee8-4031-94c7-3325241e93b0.jpg RequestId:8000009e-0002-fe00-b63f-84710c7967bb, SpanId:|2af1f554-4a0243ba12c5088e., TraceId:2af1f554-4a0243ba12c5088e, ParentId:
+      Request finished in 30.5125ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg RequestId:80000055-0000-f300-b63f-84710c7967bb, SpanId:|2af1f555-4a0243ba12c5088e., TraceId:2af1f555-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/images/pizzaTypes/f9e859fa-5c43-47d4-bf7e-686a36cfc818.jpg RequestId:80000038-0001-f400-b63f-84710c7967bb, SpanId:|2af1f556-4a0243ba12c5088e., TraceId:2af1f556-4a0243ba12c5088e, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/images/pizzaTypes/f9e859fa-5c43-47d4-bf7e-686a36cfc818.jpg  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg RequestId:80000055-0000-f300-b63f-84710c7967bb, SpanId:|2af1f555-4a0243ba12c5088e., TraceId:2af1f555-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg
+
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/images/pizzaTypes/f9e859fa-5c43-47d4-bf7e-686a36cfc818.jpg RequestId:80000038-0001-f400-b63f-84710c7967bb, SpanId:|2af1f556-4a0243ba12c5088e., TraceId:2af1f556-4a0243ba12c5088e, ParentId:
+      Request GET: /images/pizzaTypes/f9e859fa-5c43-47d4-bf7e-686a36cfc818.jpg
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg RequestId:80000055-0000-f300-b63f-84710c7967bb, SpanId:|2af1f555-4a0243ba12c5088e., TraceId:2af1f555-4a0243ba12c5088e, ParentId:
+      Sending file. Request path: '/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\images\pizzaTypes\523cb4be-38a1-45a3-aac9-34e552fc593f.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/images/pizzaTypes/523cb4be-38a1-45a3-aac9-34e552fc593f.jpg RequestId:80000055-0000-f300-b63f-8471

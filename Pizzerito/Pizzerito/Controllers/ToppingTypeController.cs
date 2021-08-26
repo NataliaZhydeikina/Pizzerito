@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
+using Pizzerito.Models;
 
 namespace Pizzerito.Controllers
 {
@@ -15,11 +17,13 @@ namespace Pizzerito.Controllers
     {
         private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
-        public ToppingTypeController(ILogger<ToppingTypeController> logger, IUnitOfWork unitOfWork)
+        public ToppingTypeController(ILogger<ToppingTypeController> logger, IUnitOfWork unitOfWork, IStringLocalizer<SharedResource> sharedLocalizer)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         [HttpGet]
@@ -27,7 +31,7 @@ namespace Pizzerito.Controllers
         {
             _logger.LogInformation($"Enter /api/toppingtype");
             _logger.LogInformation($"Return all ToppingTypes, returning HTTP 200 - OK");
-            return Json(new { data = _unitOfWork.ToppingType.GetAll() });
+            return Json(new { data = _unitOfWork.ToppingType.GetAll().Select(topping => new ToppingType { Id = topping.Id, Name = _sharedLocalizer[topping.Name] }) });
         }
 
         [HttpDelete("{id}")]

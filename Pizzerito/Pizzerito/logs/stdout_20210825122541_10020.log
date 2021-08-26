@@ -1,0 +1,58 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\natai\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (171ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (176ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (199ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [AspNetRoles] AS [a]
+              WHERE [a].[Name] = N'Manager') THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:8000005a-0000-f700-b63f-84710c7967bb, SpanId:|f2b6636e-484d707da31c46ac., TraceId:f2b6636e-484d707da31c46ac, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:8000005a-0000-f700-b63f-84710c7967bb, SpanId:|f2b6636e-484d707da31c46ac., TraceId:f2b6636e-484d707da31c46ac, ParentId:
+      Request GET: /
+
+fail: Pizzerito.Middlwares.UnhandledExceptionMiddleware[0]
+      => RequestPath:/ RequestId:8000005a-0000-f700-b63f-84710c7967bb, SpanId:|f2b6636e-484d707da31c46ac., TraceId:f2b6636e-484d707da31c46ac, ParentId:
+      Request GET: / failed
+System.InvalidOperationException: No service for type 'Pizzerito.Middlwares.RequestLocalizationCookiesMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Pizzerito.Middlwares.UnhandledExceptionMiddleware.Invoke(HttpContext context) in C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\Middlwares\UnhandledExceptionMiddleware.cs:line 25
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/ RequestId:8000005a-0000-f700-b63f-84710c7967bb, SpanId:|f2b6636e-484d707da31c46ac., TraceId:f2b6636e-484d707da31c46ac, ParentId:
+      Request finished in 430.0524ms 200 
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:8000008e-0002-fe00-b63f-84710c7967bb, SpanId:|f2b6636f-484d707da31c46ac., TraceId:f2b6636f-484d707da31c46ac, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:8000008e-0002-fe00-b63f-84710c7967bb, SpanId:|f2b6636f-484d707da31c46ac., TraceId:f2b6636f-484d707da31c46ac, ParentId:
+      Request GET: /
+
+fail: Pizzerito.Middlwares.UnhandledExceptionMiddleware[0]
+      => RequestPath:/ RequestId

@@ -1,5 +1,4 @@
-﻿
-@*use inject IOptions and Microsoft.Extensions.Options to include stripe on this page*@
+﻿@*use inject IOptions and Microsoft.Extensions.Options to include stripe on this page*@
 
 @page
 @model Pizzerito.Pages.Customer.Cart.SummaryModel
@@ -8,135 +7,137 @@
 @{
     ViewData["Title"] = "Order Summary";
 }
-
-
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 <form method="post">
     <br />
-    @if(Model.detailCart.listCart.Count > 0)
+    @if (Model.detailCart.listCart.Count > 0)
     {
         <input asp-for="@Model.detailCart.listCart[0].ApplicationUserId" hidden />
-    <div class="backgroundWhiteBorder">
-        <div class="container">
-            <div class="card card-product">
-                <div class="card-header bg-light text-primary ml-0 row container">
-                    <div class="col-6 h4 py-4 text-nowrap">
-                        <i class="fa fa-shopping-cart"></i> &nbsp;
-                        Order Summary
+        <div class="backgroundWhiteBorder">
+            <div class="container">
+                <div class="card card-product">
+                    <div class="card-header bg-light text-primary ml-0 row container">
+                        <div class="col-6 h4 py-4 text-nowrap">
+                            <i class="fa fa-shopping-cart"></i> &nbsp;
+                            @Localizer["Order Summary"]
+                        </div>
+                        <div class="col-6 text-right">
+                            <a asp-page="Index" class="btn-product red text-decoration-none">@Localizer["Back to Cart"]</a>
+                        </div>
                     </div>
-                    <div class="col-6 text-right">
-                        <a asp-page="Index" class="btn-product red text-decoration-none">Back to Cart</a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="container rounded p-2">
-                        <div class="row">
-                            <div class="col-12 col-lg-6 pb-4">
-                                <div class="row">
-                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="text-info">PickUp Details:</span>
-                                    </h4>
-                                </div>
-                                <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Name</label>
+                    <div class="card-body">
+                        <div class="container rounded p-2">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 pb-4">
+                                    <div class="row">
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-info">@Localizer["PickUp Details:"]</span>
+                                        </h4>
                                     </div>
-                                    <div class="col-9">
-                                        <input id="txtName" asp-for="@Model.detailCart.OrderHeader.PickupName" type="text" class="form-control text-capitalize" />
-                                    </div>
-                                </div>
-                                <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Phone Number</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input id="txtPhone" asp-for="@Model.detailCart.OrderHeader.PhoneNumber" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Pickup Date</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input id="datepicker" autocomplete="off" value="" asp-for="@Model.detailCart.OrderHeader.PickUpDate" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Pickup Time</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input id="timepicker" data-time-format="h:i A" value="" asp-for="@Model.detailCart.OrderHeader.PickUpTime" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="row my-1">
-                                    <div class="col-3">
-                                        <label>Additional Instructions</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <textarea  asp-for="@Model.detailCart.OrderHeader.Comments" style="height: 100px; "class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-lg-5 offset-lg-1">
-                                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                    <span class="text-info">Order Summary:</span>
-                                </h4>
-                                <ul class="list-group mb-3">
-                                    @{ var total = 0.0;
-                                        var subTotal =0.0;
-                                        }
-                                    @foreach (var details in Model.detailCart.listCart)
-                                    {
-                                    <li class="list-group-item d-flex justify-content-between">
-                                        <div>
-                                            <h6 class="my-0 text-capitalize text-primary">@details.PizzaType.Name @details.PizzaType.Category.Name</h6>
-                                            <small class="text-muted">Quantity: @details.Count</small>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label>@Localizer["Name"]</label>
                                         </div>
-                                        @{ subTotal = (details.PizzaType.Price * details.Count);}
+                                        <div class="col-9">
+                                            <input id="txtName" asp-for="@Model.detailCart.OrderHeader.PickupName" type="text" class="form-control text-capitalize" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label>@Localizer["Phone Number"]</label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input id="txtPhone" asp-for="@Model.detailCart.OrderHeader.PhoneNumber" type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label>@Localizer["Pickup Date"]</label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input id="datepicker" autocomplete="off" value="" asp-for="@Model.detailCart.OrderHeader.PickUpDate" type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label>@Localizer["Pickup Time"]</label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input id="timepicker" data-time-format="h:i A" value="" asp-for="@Model.detailCart.OrderHeader.PickUpTime" type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="row my-1">
+                                        <div class="col-3">
+                                            <label>@Localizer["Additional Instructions"]</label>
+                                        </div>
+                                        <div class="col-9">
+                                            <textarea asp-for="@Model.detailCart.OrderHeader.Comments" style="height: 100px;" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        <span class="text-muted">$@subTotal.ToString("#,##0.00")</span>
-                                        @{ total += (details.PizzaType.Price * details.Count);}
-                                    </li>
-                                            }
-                                    <li class="list-group-item d-flex justify-content-between bg-light">
-                                        <small class="text-info">Total (USD)</small>
-                                        <strong class="text-info">$@total.ToString("#,##0.00")</strong>
-                                    </li>
-                                </ul>
+                                <div class="col-12 col-lg-5 offset-lg-1">
+                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="text-info">@Localizer["Order Summary"]:</span>
+                                    </h4>
+                                    <ul class="list-group mb-3">
+                                        @{ var total = 0.0;
+                                            var subTotal = 0.0;
+                                        }
+                                        @foreach (var details in Model.detailCart.listCart)
+                                        {
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>
+                                                    <h6 class="my-0 text-capitalize text-primary">@SharedLocalizer[@details.PizzaType.Name] @SharedLocalizer[@details.PizzaType.Category.Name]</h6>
+                                                    <small class="text-muted">@Localizer["Quantity"]: @details.Count</small>
+                                                </div>
+                                                @{ subTotal = (details.PizzaType.Price * details.Count);}
+
+                                            <span class="text-muted"> @(@subTotal.ToString("C", CultureInfo.CurrentCulture))</span>
+                                                @{ total += (details.PizzaType.Price * details.Count);}
+                                            </li>
+                                        }
+                                        <li class="list-group-item d-flex justify-content-between bg-light">
+                                            <small class="text-info">@Localizer["Total (USD)"]</small>
+                                            <strong class="text-info">(@total.ToString("C", CultureInfo.CurrentCulture))</strong>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-12 col-md-4 offset-md-8">
-                            @*create variable for OrderTotal to have amount in cents for stripe*@
-                            @{ 
-                                var OrderTotalForStripe = Model.detailCart.OrderHeader.OrderTotal * 100;
-                            }
-                            <script src="https://checkout.stripe.com/checkout.js" 
-                                    class="stripe-button" 
-                                    data-key="@Stripe.Value.PublishableKey"
-                                    data-amount="@OrderTotalForStripe"
-                                    data-name="Pizzerito Restaurant"
-                                    data-label="Place Order"
-                                    data-description="Pizza to Go!"
-                                    data-locale="auto"
-                                    data-zip-code="true"
-                                    data-allow-remember-me="false"
-                                    data-image="/images/PizzarittoLogo2.png">
-                                
-                            </script>
-                            <script>document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';</script>
-                            <button type="submit" id="btnPlaceOrder" onclick="return validateInput()" value="Place Order" class="btn-product green text-decoration-none form-control" style="line-height: 1;">Place Order</button>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-12 col-md-4 offset-md-8">
+                                @*create variable for OrderTotal to have amount in cents for stripe*@
+                                @{
+                                    var OrderTotalForStripe = Model.detailCart.OrderHeader.OrderTotal * 100;
+                                }
+                                <script src="https://checkout.stripe.com/checkout.js"
+                                        class="stripe-button"
+                                        data-key="@Stripe.Value.PublishableKey"
+                                        data-amount="@OrderTotalForStripe"
+                                        data-name="@Localizer["Pizzerito Restaurant"]"
+                                        data-label="@Localizer["Place Order"]"
+                                        data-description="@Localizer["Pizza to Go!"]"
+                                        data-locale="auto"
+                                        data-zip-code="true"
+                                        data-allow-remember-me="false"
+                                        data-image="/images/PizzarittoLogo2.png">
+
+                                </script>
+                                <script>document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';</script>
+                                <button type="submit" id="btnPlaceOrder" onclick="return validateInput()" value="Place Order" class="btn-product green text-decoration-none form-control" style="line-height: 1;">@Localizer["Place Order"]</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     }
 
 </form>

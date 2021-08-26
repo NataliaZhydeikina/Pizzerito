@@ -1,0 +1,543 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\natai\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (187ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (415ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (164ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [AspNetRoles] AS [a]
+              WHERE [a].[Name] = N'Manager') THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Request GET: /
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Executed DbCommand (474ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[Discriminator] IN (N'IdentityUser', N'ApplicationUser') AND ([a].[Id] = @__p_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Executed DbCommand (138ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+      FROM [AspNetUserClaims] AS [a]
+      WHERE [a].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Executed DbCommand (123ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a0].[Name]
+      FROM [AspNetUserRoles] AS [a]
+      INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+      WHERE [a].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Executed DbCommand (125ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Executed DbCommand (128ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[ClaimType], [a].[ClaimValue]
+      FROM [AspNetRoleClaims] AS [a]
+      WHERE [a].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Mvc.RedirectToRouteResult[1]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId: => /Index
+      Executing RedirectToPageResult, redirecting to /Customer/Home/Index.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/ RequestId:80000052-0003-f200-b63f-84710c7967bb, SpanId:|18589c0-4e86008b5c682172., TraceId:18589c0-4e86008b5c682172, ParentId:
+      Request finished in 7490.6119ms 302 
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Customer/Home  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId:
+      Request GET: /Customer/Home
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Executed DbCommand (127ms) [Parameters=[@__claim_Value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[ApplicationUserId], [s].[Count], [s].[PizzaTypeId]
+      FROM [ShoppingCart] AS [s]
+      WHERE [s].[ApplicationUserId] = @__claim_Value_0
+info: Microsoft.AspNetCore.Session.DistributedSession[2]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Accessing expired session, Key:ee0ba83e-310e-f969-4be6-bc4636743ed1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Executed DbCommand (157ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Image], [p].[Name], [p].[PizzaCrustFlavorId], [p].[PizzaCrustTypeId], [p].[PizzaSizeId], [p].[Price], [p].[ToppingEightId], [p].[ToppingFiveId], [p].[ToppingFourId], [p].[ToppingOneId], [p].[ToppingSevenId], [p].[ToppingSixId], [p].[ToppingThreeId], [p].[ToppingTwoId], [p].[ToppingTypeId], [c].[Id], [c].[DisplayOrder], [c].[Name], [t].[Id], [t].[Name], [p1].[Id], [p1].[CrustType], [p1].[CrustTypeDescription], [p2].[Id], [p2].[CrustFlavor], [p2].[CrustFlavorDescription], [p0].[Id], [p0].[Size]
+      FROM [PizzaType] AS [p]
+      INNER JOIN [PizzaSize] AS [p0] ON [p].[PizzaSizeId] = [p0].[Id]
+      INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+      INNER JOIN [ToppingType] AS [t] ON [p].[ToppingTypeId] = [t].[Id]
+      INNER JOIN [PizzaCrustType] AS [p1] ON [p].[PizzaCrustTypeId] = [p1].[Id]
+      INNER JOIN [PizzaCrustFlavor] AS [p2] ON [p].[PizzaCrustFlavorId] = [p2].[Id]
+      ORDER BY [p0].[Size]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[DisplayOrder], [c].[Name]
+      FROM [Category] AS [c]
+      ORDER BY [c].[DisplayOrder]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name]
+      FROM [ToppingType] AS [t]
+      ORDER BY [t].[Id]
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Session.DistributedSession[3]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId:
+      Session started; Key:ee0ba83e-310e-f969-4be6-bc4636743ed1, Id:08fed398-4d20-ee75-9110-42378ad71c68
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Customer/Home RequestId:80000054-0003-f200-b63f-84710c7967bb, SpanId:|18589c1-4e86008b5c682172., TraceId:18589c1-4e86008b5c682172, ParentId:
+      Request finished in 2316.9737ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/ToppingType RequestId:80000050-0000-fb00-b63f-84710c7967bb, SpanId:|18589c2-4e86008b5c682172., TraceId:18589c2-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/ToppingType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/ToppingType RequestId:80000050-0000-fb00-b63f-84710c7967bb, SpanId:|18589c2-4e86008b5c682172., TraceId:18589c2-4e86008b5c682172, ParentId:
+      Request GET: /Admin/ToppingType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/ToppingType RequestId:80000050-0000-fb00-b63f-84710c7967bb, SpanId:|18589c2-4e86008b5c682172., TraceId:18589c2-4e86008b5c682172, ParentId: => /Admin/ToppingType/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/ToppingType RequestId:80000050-0000-fb00-b63f-84710c7967bb, SpanId:|18589c2-4e86008b5c682172., TraceId:18589c2-4e86008b5c682172, ParentId: => /Admin/ToppingType/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/ToppingType RequestId:80000050-0000-fb00-b63f-84710c7967bb, SpanId:|18589c2-4e86008b5c682172., TraceId:18589c2-4e86008b5c682172, ParentId:
+      Request finished in 1065.1406ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/js/toppingType.js RequestId:80000025-0002-f500-b63f-84710c7967bb, SpanId:|18589c3-4e86008b5c682172., TraceId:18589c3-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/js/toppingType.js  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/js/toppingType.js RequestId:80000025-0002-f500-b63f-84710c7967bb, SpanId:|18589c3-4e86008b5c682172., TraceId:18589c3-4e86008b5c682172, ParentId:
+      Request GET: /js/toppingType.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/js/toppingType.js RequestId:80000025-0002-f500-b63f-84710c7967bb, SpanId:|18589c3-4e86008b5c682172., TraceId:18589c3-4e86008b5c682172, ParentId:
+      Sending file. Request path: '/js/toppingType.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\js\toppingType.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/js/toppingType.js RequestId:80000025-0002-f500-b63f-84710c7967bb, SpanId:|18589c3-4e86008b5c682172., TraceId:18589c3-4e86008b5c682172, ParentId:
+      Request finished in 1713.9302ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/toppingtype?_=1629903182348  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId:
+      Request GET: /api/toppingtype
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "ToppingType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.ToppingTypeController (Pizzerito).
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.ToppingTypeController[0]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Enter /api/toppingtype
+info: Pizzerito.Controllers.ToppingTypeController[0]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Return all ToppingTypes, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Executed DbCommand (126ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name]
+      FROM [ToppingType] AS [t]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.ToppingType, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId: => Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.ToppingTypeController.Get (Pizzerito) in 663.4768ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/toppingtype RequestId:80000052-0000-fb00-b63f-84710c7967bb, SpanId:|18589c4-4e86008b5c682172., TraceId:18589c4-4e86008b5c682172, ParentId:
+      Request finished in 1095.7254ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustFlavor RequestId:80000027-0002-f500-b63f-84710c7967bb, SpanId:|18589c5-4e86008b5c682172., TraceId:18589c5-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustFlavor  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustFlavor RequestId:80000027-0002-f500-b63f-84710c7967bb, SpanId:|18589c5-4e86008b5c682172., TraceId:18589c5-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustFlavor
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustFlavor RequestId:80000027-0002-f500-b63f-84710c7967bb, SpanId:|18589c5-4e86008b5c682172., TraceId:18589c5-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustFlavor RequestId:80000027-0002-f500-b63f-84710c7967bb, SpanId:|18589c5-4e86008b5c682172., TraceId:18589c5-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustFlavor RequestId:80000027-0002-f500-b63f-84710c7967bb, SpanId:|18589c5-4e86008b5c682172., TraceId:18589c5-4e86008b5c682172, ParentId:
+      Request finished in 151.1001ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustFlavor?_=1629903189082  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustFlavor
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustFlavor", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String) on controller Pizzerito.Controllers.PizzaCrustFlavorController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustFlavorController[0]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Enter /api/pizzacrustflavor
+info: Pizzerito.Controllers.PizzaCrustFlavorController[0]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Return all PizzaCrustFlavor, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustFlavor], [p].[CrustFlavorDescription]
+      FROM [PizzaCrustFlavor] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustFlavor, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.PizzaCrustFlavorController.Get (Pizzerito) in 237.6394ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/PizzaCrustFlavor RequestId:80000056-0003-f200-b63f-84710c7967bb, SpanId:|18589c6-4e86008b5c682172., TraceId:18589c6-4e86008b5c682172, ParentId:
+      Request finished in 331.7632ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustFlavor/Upsert  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustFlavor/Upsert
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Upsert
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Upsert
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Upsert
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId: => /Admin/CrustFlavor/Upsert
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustFlavor/Upsert RequestId:8000004d-0000-f100-b63f-84710c7967bb, SpanId:|18589c7-4e86008b5c682172., TraceId:18589c7-4e86008b5c682172, ParentId:
+      Request finished in 310.651ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType RequestId:80000071-0001-f400-b63f-84710c7967bb, SpanId:|18589c8-4e86008b5c682172., TraceId:18589c8-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType RequestId:80000071-0001-f400-b63f-84710c7967bb, SpanId:|18589c8-4e86008b5c682172., TraceId:18589c8-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustType RequestId:80000071-0001-f400-b63f-84710c7967bb, SpanId:|18589c8-4e86008b5c682172., TraceId:18589c8-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustType RequestId:80000071-0001-f400-b63f-84710c7967bb, SpanId:|18589c8-4e86008b5c682172., TraceId:18589c8-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType RequestId:80000071-0001-f400-b63f-84710c7967bb, SpanId:|18589c8-4e86008b5c682172., TraceId:18589c8-4e86008b5c682172, ParentId:
+      Request finished in 100.6431ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustType?_=1629903274426  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustType
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.PizzaCrustTypeController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Enter /api/pizzacrusttype
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Return all PizzaCrustType, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed DbCommand (146ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustType], [p].[CrustTypeDescription]
+      FROM [PizzaCrustType] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustType, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito) in 256.0421ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/PizzaCrustType RequestId:80000029-0002-f500-b63f-84710c7967bb, SpanId:|18589c9-4e86008b5c682172., TraceId:18589c9-4e86008b5c682172, ParentId:
+      Request finished in 305.0105ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType/Upsert  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType/Upsert
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId: => /Admin/CrustType/Upsert
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId: => /Admin/CrustType/Upsert
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId: => /Admin/CrustType/Upsert
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId: => /Admin/CrustType/Upsert
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType/Upsert RequestId:8000002b-0002-f500-b63f-84710c7967bb, SpanId:|18589ca-4e86008b5c682172., TraceId:18589ca-4e86008b5c682172, ParentId:
+      Request finished in 185.327ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType RequestId:80000061-0001-fa00-b63f-84710c7967bb, SpanId:|18589cb-4e86008b5c682172., TraceId:18589cb-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType RequestId:80000061-0001-fa00-b63f-84710c7967bb, SpanId:|18589cb-4e86008b5c682172., TraceId:18589cb-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000061-0001-fa00-b63f-84710c7967bb, SpanId:|18589cb-4e86008b5c682172., TraceId:18589cb-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000061-0001-fa00-b63f-84710c7967bb, SpanId:|18589cb-4e86008b5c682172., TraceId:18589cb-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType RequestId:80000061-0001-fa00-b63f-84710c7967bb, SpanId:|18589cb-4e86008b5c682172., TraceId:18589cb-4e86008b5c682172, ParentId:
+      Request finished in 45.4906ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustType?_=1629903291225  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustType
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.PizzaCrustTypeController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Enter /api/pizzacrusttype
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Return all PizzaCrustType, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed DbCommand (126ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustType], [p].[CrustTypeDescription]
+      FROM [PizzaCrustType] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustType, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito) in 183.5131ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006b-0002-ff00-b63f-84710c7967bb, SpanId:|18589cc-4e86008b5c682172., TraceId:18589cc-4e86008b5c682172, ParentId:
+      Request finished in 291.5786ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType RequestId:8000006d-0002-ff00-b63f-84710c7967bb, SpanId:|18589cd-4e86008b5c682172., TraceId:18589cd-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType RequestId:8000006d-0002-ff00-b63f-84710c7967bb, SpanId:|18589cd-4e86008b5c682172., TraceId:18589cd-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:8000006d-0002-ff00-b63f-84710c7967bb, SpanId:|18589cd-4e86008b5c682172., TraceId:18589cd-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:8000006d-0002-ff00-b63f-84710c7967bb, SpanId:|18589cd-4e86008b5c682172., TraceId:18589cd-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType RequestId:8000006d-0002-ff00-b63f-84710c7967bb, SpanId:|18589cd-4e86008b5c682172., TraceId:18589cd-4e86008b5c682172, ParentId:
+      Request finished in 121.9773ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustType?_=1629903296778  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustType
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.PizzaCrustTypeController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Enter /api/pizzacrusttype
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Return all PizzaCrustType, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustType], [p].[CrustTypeDescription]
+      FROM [PizzaCrustType] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustType, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito) in 194.2657ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/PizzaCrustType RequestId:80000063-0001-fa00-b63f-84710c7967bb, SpanId:|18589ce-4e86008b5c682172., TraceId:18589ce-4e86008b5c682172, ParentId:
+      Request finished in 233.9109ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType RequestId:80000065-0001-fa00-b63f-84710c7967bb, SpanId:|18589cf-4e86008b5c682172., TraceId:18589cf-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType RequestId:80000065-0001-fa00-b63f-84710c7967bb, SpanId:|18589cf-4e86008b5c682172., TraceId:18589cf-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000065-0001-fa00-b63f-84710c7967bb, SpanId:|18589cf-4e86008b5c682172., TraceId:18589cf-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000065-0001-fa00-b63f-84710c7967bb, SpanId:|18589cf-4e86008b5c682172., TraceId:18589cf-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType RequestId:80000065-0001-fa00-b63f-84710c7967bb, SpanId:|18589cf-4e86008b5c682172., TraceId:18589cf-4e86008b5c682172, ParentId:
+      Request finished in 61.7538ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustType?_=1629903300725  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustType
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.PizzaCrustTypeController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Enter /api/pizzacrusttype
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Return all PizzaCrustType, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustType], [p].[CrustTypeDescription]
+      FROM [PizzaCrustType] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustType, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito) in 184.1174ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/PizzaCrustType RequestId:8000006f-0002-ff00-b63f-84710c7967bb, SpanId:|18589d0-4e86008b5c682172., TraceId:18589d0-4e86008b5c682172, ParentId:
+      Request finished in 232.4203ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/CrustType RequestId:80000055-0000-fb00-b63f-84710c7967bb, SpanId:|18589d1-4e86008b5c682172., TraceId:18589d1-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/CrustType  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/CrustType RequestId:80000055-0000-fb00-b63f-84710c7967bb, SpanId:|18589d1-4e86008b5c682172., TraceId:18589d1-4e86008b5c682172, ParentId:
+      Request GET: /Admin/CrustType
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000055-0000-fb00-b63f-84710c7967bb, SpanId:|18589d1-4e86008b5c682172., TraceId:18589d1-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/CrustType RequestId:80000055-0000-fb00-b63f-84710c7967bb, SpanId:|18589d1-4e86008b5c682172., TraceId:18589d1-4e86008b5c682172, ParentId: => /Admin/CrustType/Index
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/CrustType RequestId:80000055-0000-fb00-b63f-84710c7967bb, SpanId:|18589d1-4e86008b5c682172., TraceId:18589d1-4e86008b5c682172, ParentId:
+      Request finished in 54.7321ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/PizzaCrustType?_=1629903305962  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId:
+      Request GET: /api/PizzaCrustType
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "PizzaCrustType", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.PizzaCrustTypeController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Enter /api/pizzacrusttype
+info: Pizzerito.Controllers.PizzaCrustTypeController[0]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Return all PizzaCrustType, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executed DbCommand (127ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CrustType], [p].[CrustTypeDescription]
+      FROM [PizzaCrustType] AS [p]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/PizzaCrustType RequestId:80000057-0000-fb00-b63f-84710c7967bb, SpanId:|18589d2-4e86008b5c682172., TraceId:18589d2-4e86008b5c682172, ParentId: => Pizzerito.Controllers.PizzaCrustTypeController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.PizzaCrustType, Pizzerito.Models, Version=1.0.0.0, Cu

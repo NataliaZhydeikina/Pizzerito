@@ -5,7 +5,23 @@
 @inject IHttpContextAccessor HttpContextAccessor
 @using Pizzerito.Utility
 @using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
 @inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+
+    // get service IRequestCultureFeature
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    // get list of cultures
+
+    var cultureItems =  LocOptions.Value.SupportedCultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .ToList();
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +46,7 @@
 </head>
 <body class="" cz-shortcut-listen="true" style="padding-top: 140px;">
     <div id="instructions" style="padding-top:0px;">
-        <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-info-circle" aria-hidden="true"></i> </button>
+        <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle" aria-hidden="true"></i> </button>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -43,7 +59,7 @@
                             </div>
                             <div class="col-2"></div>
                             <div class="col-4 pt-4">
-                                <h2 class="modal-title pt-2" id="exampleModalLabel" style="color: #5e9ca0; text-align: center;"><strong>Pizzerito Ordering System - Demo</strong></h2>
+                                <h2 class="modal-title pt-2" id="exampleModalLabel" style="color: #5e9ca0; text-align:center;"><strong>@SharedLocalizer["Pizzerito Ordering System - Demo"]</strong></h2>
                             </div>
                             <div class="col-4">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -54,25 +70,27 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <h4><span style="color: #993300; padding-bottom:5px;">Pizzerito Demo Ordering System&nbsp;</span><strong style="color: #993300;"><a style="color: #993300;" href="https://github.com/NataliaZhydeikina/Pizzerito" target="_blank" rel="noopener">GitHub Repo Here</a></strong></h4>
-                    <h4><span style="color: #008080;">Website Overview:</span></h4>
+                    <h4><span style="color: #993300; padding-bottom:5px;">@SharedLocalizer["Pizzerito Demo Ordering System"]&nbsp;</span><strong style="color: #993300;"><a style="color: #993300;" href="https://github.com/NataliaZhydeikina/Pizzerito" target="_blank" rel="noopener">@SharedLocalizer["GitHub Repo Here"]</a></strong></h4>
+                    <h4><span style="color: #008080;">@SharedLocalizer["Website Overview:"]</span></h4>
                     <ul>
                         <li>
-                            Following are the Admin User Account that exists by default <i style="color:dodgerblue">(Password: Admin123*)</i>:
+                            @SharedLocalizer["Following are the Admin User Account that exists by default"] <i style="color:dodgerblue"> (Password: Admin123 *) </i>:
                             <ul>
-                                <li>Manager User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">admin@gmail.com</i></li>
-                                <li>Front Desk User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">front@gmail.com</i></li>
-                                <li>Pizza Maker&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">kitchen@gmail.com</i></li>
-                                <li>Customer User&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i style="color:dodgerblue">customer@gmail.com</i></li>
+                                <li>@SharedLocalizer["Manager User"]<i style="color:dodgerblue"> admin@gmail.com </i></li>
+                                <li>@SharedLocalizer["Front Desk User"]<i style="color:dodgerblue"> front@gmail.com </i></li>
+                                <li>@SharedLocalizer["Pizza Maker"]<i style="color:dodgerblue"> kitchen@gmail.com </i></li>
+                                <li>@SharedLocalizer["Customer User"]<i style="color:dodgerblue"> customer@gmail.com </i></li>
                             </ul>
                         </li>
-                        <li>You can create new accounts as you wish! If you prefer to create any accounts please login using the Admin/Manager User and navigate to Users inside Content Management.&nbsp;</li>
+                        <li>
+                            @SharedLocalizer["You can create new accounts as you wish! If you prefer to create any accounts please login using the Admin/ Manager User and navigate to Users inside Content Management."]
+                        </li>
                         @*<li>Create/Edit/Delete functionalities have been disabled for all users inside Content Management (Admin) portal to avoid misuse of website.</li>*@
-                        <li>If any Manager account locks any other user using Content Management portal, they will be able to lock them for only 2 min and system will unlock them after 2min.</li>
+                        <li>
+                            @SharedLocalizer["If any Manager account locks any other user using Content Management portal, they will be able to lock them for only 2 min and system will unlock them after 2min."]
+                        </li>
                     </ul>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -83,7 +101,6 @@
                 <a asp-area="" asp-page="/Index" class="navbar-brand">
                     <img src="~/images/PizzarittoLogo2.png" alt="CoolBrand">
                 </a>
-                @*<a class="navbar-brand text-white" asp-area="" asp-page="/Index">Pizzerito</a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -91,46 +108,45 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-page="/Index">"Home"</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-page="/Index">@SharedLocalizer["Home"]</a></li>
                         @if (User.IsInRole(SD.ManagerRole))
                         {
                             <li class="nav-item dropdown">
-                                <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">"Admin"</a>
+                                <a href="#" id="navbarDropDown" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">@SharedLocalizer["Admin"]</a>
                                 <div class="dropdown-menu bg-primary">
-                                    <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">"Add Categories"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/Toppings/Index">"Add Toppings"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/ToppingType/Index">"Add Topping Types"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustFlavor/Index">"Add Crust Flavors"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustType/Index">"Add Crust Types"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/PizzaSize/Index">"Add Pizza Sizes"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/MenuType/Index">"Add New Menu Item"</a>
-                                    <a class="dropdown-item text-white" asp-page="/Admin/User/Index">"Add New Menu Item"</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Category/Index">@SharedLocalizer["Add Categories"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/Toppings/Index">
+                                        @SharedLocalizer["Add Toppings"]
+                                    </a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/ToppingType/Index">@SharedLocalizer["Add Topping Types"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustFlavor/Index">@SharedLocalizer["Add Crust Flavors"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/CrustType/Index">@SharedLocalizer["Add Crust Types"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/PizzaSize/Index">@SharedLocalizer["Add Pizza Sizes"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/MenuType/Index">@SharedLocalizer["Add New Menu Item"]</a>
+                                    <a class="dropdown-item text-white" asp-page="/Admin/User/Index">@SharedLocalizer["Add New User"]</a>
                                 </div>
                             </li>
                         }
-
                         @*Visable only to manager, kitchen and front desk *@
 
                         @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.PizzaMakerRole))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-page="/Admin/Order/ManageOrder">Manager Order</a>
+                                <a class="nav-link text-white" asp-page="/Admin/Order/ManageOrder">@SharedLocalizer["Manager Order"]</a>
                             </li>
                         }
 
                         @if (User.IsInRole(SD.ManagerRole) || User.IsInRole(SD.FrontDeskRole))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order Pickup</a>
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">@SharedLocalizer["Order Pickup"]</a>
                             </li>
                         }
                         @* Added to include customer order history tab *@
                         @if (User.IsInRole(SD.CustomerRole))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">Order History</a>
+                                <a class="nav-link text-white" asp-page="/Admin/Order/OrderList">@SharedLocalizer["Order History"]</a>
                             </li>
                         }
                         @*-----End*@
@@ -156,11 +172,24 @@
                                 </a>
                             </li>
                         }
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link text-white dropdown-toggle" data-toggle="dropdown">@SharedLocalizer["Language"]</a>
+                        <div class="dropdown-menu bg-primary">
+                            @foreach (var culture in cultureItems)
+                            {
+                                var currentParams = System.Web.HttpUtility.ParseQueryString(Context.Request.QueryString.Value);
+                                currentParams.Remove("culture");
+
+
+                                var url = currentParams.Count>0? string.Format("{0}?{1}&culture={2}", Context.Request.Path, string.Join("&", currentParams), culture.Value): string.Format("{0}?culture={1}", Context.Request.Path, culture.Value);
+                                <a class="dropdown-item text-white" href="@url">@culture.Text</a>
+                            }
+                        </div>
+                    </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -170,7 +199,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Pizzerito - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2020 - Pizzerito - <a asp-area="" asp-page="/Privacy">@SharedLocalizer["Privacy"]</a>
         </div>
     </footer>
 

@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Utility;
+using Microsoft.Extensions.Localization;
+using Pizzerito.Models;
+using Microsoft.AspNetCore.Mvc.Localization;
 
 namespace Pizzerito.Controllers
 {
@@ -18,11 +21,13 @@ namespace Pizzerito.Controllers
     {
         private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
-        public PizzaCrustFlavorController(ILogger<PizzaCrustFlavorController> logger, IUnitOfWork unitOfWork)
+        public PizzaCrustFlavorController(ILogger<PizzaCrustFlavorController> logger, IUnitOfWork unitOfWork, IStringLocalizer<SharedResource> sharedLocalizer)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         [HttpGet]
@@ -30,7 +35,7 @@ namespace Pizzerito.Controllers
         {
             _logger.LogInformation($"Enter /api/pizzacrustflavor");
             _logger.LogInformation($"Return all PizzaCrustFlavor, returning HTTP 200 - OK");
-            return Json(new { data = _unitOfWork.PizzaCrustFlavor.GetAll() });
+            return Json(new { data = _unitOfWork.PizzaCrustFlavor.GetAll().Select(crustFlavor => new PizzaCrustFlavor { Id = crustFlavor.Id, CrustFlavor = _sharedLocalizer[crustFlavor.CrustFlavor], CrustFlavorDescription = _sharedLocalizer[crustFlavor.CrustFlavorDescription] }) });
         }
 
         [HttpDelete("{id}")]

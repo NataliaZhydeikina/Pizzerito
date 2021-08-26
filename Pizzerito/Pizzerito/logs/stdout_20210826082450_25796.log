@@ -1,0 +1,137 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\natai\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (186ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (182ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (171ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (121ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [AspNetRoles] AS [a]
+              WHERE [a].[Name] = N'Manager') THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:80000050-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca1-4548cba6a2649f97., TraceId:1cb38ca1-4548cba6a2649f97, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:80000050-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca1-4548cba6a2649f97., TraceId:1cb38ca1-4548cba6a2649f97, ParentId:
+      Request GET: /
+
+info: Microsoft.AspNetCore.Mvc.RedirectToRouteResult[1]
+      => RequestPath:/ RequestId:80000050-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca1-4548cba6a2649f97., TraceId:1cb38ca1-4548cba6a2649f97, ParentId: => /Index
+      Executing RedirectToPageResult, redirecting to /Customer/Home/Index.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Customer/Home  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/ RequestId:80000050-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca1-4548cba6a2649f97., TraceId:1cb38ca1-4548cba6a2649f97, ParentId:
+      Request finished in 3300.6773ms 302 
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId:
+      Request GET: /Customer/Home
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Executed DbCommand (376ms) [Parameters=[@__claim_Value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[ApplicationUserId], [s].[Count], [s].[PizzaTypeId]
+      FROM [ShoppingCart] AS [s]
+      WHERE [s].[ApplicationUserId] = @__claim_Value_0
+info: Microsoft.AspNetCore.Session.DistributedSession[2]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Accessing expired session, Key:ee0ba83e-310e-f969-4be6-bc4636743ed1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Executed DbCommand (146ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Image], [p].[Name], [p].[PizzaCrustFlavorId], [p].[PizzaCrustTypeId], [p].[PizzaSizeId], [p].[Price], [p].[ToppingEightId], [p].[ToppingFiveId], [p].[ToppingFourId], [p].[ToppingOneId], [p].[ToppingSevenId], [p].[ToppingSixId], [p].[ToppingThreeId], [p].[ToppingTwoId], [p].[ToppingTypeId], [c].[Id], [c].[DisplayOrder], [c].[Name], [t].[Id], [t].[Name], [p1].[Id], [p1].[CrustType], [p1].[CrustTypeDescription], [p2].[Id], [p2].[CrustFlavor], [p2].[CrustFlavorDescription], [p0].[Id], [p0].[Size]
+      FROM [PizzaType] AS [p]
+      INNER JOIN [PizzaSize] AS [p0] ON [p].[PizzaSizeId] = [p0].[Id]
+      INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+      INNER JOIN [ToppingType] AS [t] ON [p].[ToppingTypeId] = [t].[Id]
+      INNER JOIN [PizzaCrustType] AS [p1] ON [p].[PizzaCrustTypeId] = [p1].[Id]
+      INNER JOIN [PizzaCrustFlavor] AS [p2] ON [p].[PizzaCrustFlavorId] = [p2].[Id]
+      ORDER BY [p0].[Size]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[DisplayOrder], [c].[Name]
+      FROM [Category] AS [c]
+      ORDER BY [c].[DisplayOrder]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name]
+      FROM [ToppingType] AS [t]
+      ORDER BY [t].[Id]
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Session.DistributedSession[3]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId:
+      Session started; Key:ee0ba83e-310e-f969-4be6-bc4636743ed1, Id:629032eb-b02a-0fdd-52ae-c0e6de4c63c7
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Customer/Home RequestId:80000052-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca2-4548cba6a2649f97., TraceId:1cb38ca2-4548cba6a2649f97, ParentId:
+      Request finished in 3222.5434ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Category  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId:
+      Request GET: /Admin/Category
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId: => /Admin/Category/Index
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId: => /Admin/Category/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId: => /Admin/Category/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Category RequestId:80000054-0002-ee00-b63f-84710c7967bb, SpanId:|1cb38ca3-4548cba6a2649f97., TraceId:1cb38ca3-4548cba6a2649f97, ParentId:
+      Request finished in 197.3888ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/category?_=1629966339399  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId:
+      Request GET: /api/category
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId: => Pizzerito.Controllers.CategoryController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Category", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.CategoryController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId: => Pizzerito.Controllers.CategoryController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId: => Pizzerito.Controllers.CategoryController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.CategoryController[0]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, ParentId: => Pizzerito.Controllers.CategoryController.Get (Pizzerito)
+      Enter /api/category
+info: Pizzerito.Controllers.CategoryController[0]
+      => RequestPath:/api/category RequestId:80000046-0000-ee00-b63f-84710c7967bb, SpanId:|1cb38ca4-4548cba6a2649f97., TraceId:1cb38ca4-4548cba6a2649f97, Par

@@ -1,7 +1,8 @@
 ﻿@page
 @model Pizzerito.Pages.Admin.ToppingType.UpsertModel
-
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 <form method="post" asp-action="Upsert">
     <div class="container">
@@ -12,16 +13,16 @@
                 <input type="hidden" asp-for="ToppingTypeObj.Id" />
             }
             <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
-                <h2 class="text-primary font-weight-light">@(Model.ToppingTypeObj.Id!=0 ? "Update " : "Create New ")Topping Type</h2>
+                <h2 class="text-primary font-weight-light">@(Model.ToppingTypeObj.Id!=0 ? @SharedLocalizer["Update"] : @SharedLocalizer["Create New"]) &nbsp; @Localizer["Topping Type"]</h2>
             </div>
 
             <div class="col-8 pt-3">
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="ToppingTypeObj.Name"></label>
+                        <label asp-for="ToppingTypeObj.Name">@Localizer["Topping name"]</label>
                     </div>
                     <div class="col-9">
-                        <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();"  asp-for="ToppingTypeObj.Name" />
+                        <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();" asp-for="ToppingTypeObj.Name" />
                         <span class="text-danger" asp-validation-for="ToppingTypeObj.Name"></span>
                     </div>
                 </div>
@@ -30,10 +31,10 @@
                     <div class="col-9 offset-3">
                         <div class="row">
                             <div class="col-6">
-                                <button type="submit" class="btn btn-primary form-control">@(Model.ToppingTypeObj.Id!=0 ? "Update" : "Create")</button>
+                                <button type="submit" class="btn btn-primary form-control">@(Model.ToppingTypeObj.Id!=0 ? @SharedLocalizer["Update"] : @SharedLocalizer["Create"])</button>
                             </div>
                             <div class="col-6">
-                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
+                                <a asp-page="./Index" class="btn btn-success form-control">@SharedLocalizer["Back to List"]</a>
                             </div>
                         </div>
                     </div>

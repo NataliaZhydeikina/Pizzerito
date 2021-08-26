@@ -4,8 +4,10 @@
 @{
     ViewData["Title"] = "Register";
 }
-
-
+@using Pizzerito
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 <div id="content" class="py-4 my-4">
     <div id="pageBackground">
         <div id="pageBackgroundFooter">
@@ -21,55 +23,55 @@
                         <h3 class="col-12 text-success text-center py-4">
                             @if (User.IsInRole(SD.ManagerRole))
                             {
-                                <strong>Register an Employee</strong>
+                                <strong>@Localizer["Register an Employee"]</strong>
                             }
                             else
                             {
-                                <strong>Sign Up</strong>
+                                <strong>@Localizer["Sign Up"]</strong>
                             }
                         </h3>
                         <hr />
                         <div class="form-row py-2">
                             <div class="col">
                                 <div>
-                                    <input type="text" asp-for="Input.FirstName" autocomplete="off" placeholder="First Name" class="form-control" />
+                                    <input type="text" asp-for="Input.FirstName" autocomplete="off" placeholder="@Localizer["First Name"]" class="form-control" />
                                     <span asp-validation-for="Input.FirstName" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div>
-                                    <input type="text" asp-for="Input.LastName" autocomplete="off" placeholder="Last Name" class="form-control" />
+                                    <input type="text" asp-for="Input.LastName" autocomplete="off" placeholder="@Localizer["Last Name"]" class="form-control" />
                                     <span asp-validation-for="Input.LastName" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="py-2">
-                            <input type="email" asp-for="Input.Email" autocomplete="off" placeholder="Email" class="form-control" />
+                            <input type="email" asp-for="Input.Email" autocomplete="off" placeholder="@Localizer["Email"]" class="form-control" />
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
                         <div class="py-2">
-                            <input id="ContactPhone" type="text" asp-for="Input.PhoneNumber" autocomplete="off" placeholder="Home Phone" class="form-control" />
+                            <input id="ContactPhone" type="text" asp-for="Input.PhoneNumber" autocomplete="off" placeholder="@Localizer["Home Phone"]" class="form-control" />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="py-2">
-                            <input type="password" asp-for="Input.Password" autocomplete="off" placeholder="Password" class="form-control" />
+                            <input type="password" asp-for="Input.Password" autocomplete="off" placeholder="@Localizer["Password"]" class="form-control" />
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
                         <div class="py-2">
-                            <input id="ContactPhone" type="password" asp-for="Input.ConfirmPassword" autocomplete="off" placeholder="Confirm Password" class="form-control" />
+                            <input id="ContactPhone" type="password" asp-for="Input.ConfirmPassword" autocomplete="off" placeholder="@Localizer["Confirm Password"]" class="form-control" />
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                         @if (User.IsInRole(SD.ManagerRole))
                         {
                             <div class="py-2">
-                                <input type="radio" name="rdUserRole" value="@SD.ManagerRole" /> @SD.ManagerRole
-                                <input type="radio" name="rdUserRole" value="@SD.DeliverDriverRole" /> @SD.DeliverDriverRole
-                                <input type="radio" name="rdUserRole" value="@SD.PizzaMakerRole" /> @SD.PizzaMakerRole
-                                <input type="radio" name="rdUserRole" value="@SD.FrontDeskRole" /> @SD.FrontDeskRole
+                                <input type="radio" name="rdUserRole" value="@SD.ManagerRole" /> @SharedLocalizer[@SD.ManagerRole]
+                                <input type="radio" name="rdUserRole" value="@SD.DeliverDriverRole" /> @SharedLocalizer[@SD.DeliverDriverRole]
+                                <input type="radio" name="rdUserRole" value="@SD.PizzaMakerRole" /> @SharedLocalizer[@SD.PizzaMakerRole]
+                                <input type="radio" name="rdUserRole" value="@SD.FrontDeskRole" /> @SharedLocalizer[@SD.FrontDeskRole]
                             </div>
                         }
                         <div class="py-2">
-                            <button type="submit" class="btn btn-product green form-control m-0" style="line-height: 0;">Register</button>
+                            <button type="submit" class="btn btn-product green form-control m-0" style="line-height: 0;">@Localizer["Register"]</button>
                         </div>
 
                     </form>
@@ -80,12 +82,12 @@
 
                         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                             <p>
-                                By clicking <em>Register</em> you agree to our <a asp-page="./TermsOfService"> terms of service </a>
+                                @Localizer["By clicking <em>Register</em> you agree to our"] <a asp-page="./TermsOfService"> @Localizer["terms of service"] </a>
                             </p>
                             <hr />
-                            
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
+
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
                                 <div class="col-12 d-flex justify-content-center ">
                                     <ul class="text-left w-50" style="list-style-type:none;">
 
@@ -93,7 +95,7 @@
                                         @if (provider.Name.ToLower().Contains("facebook"))
                                         {
                                             <li>
-                                            <button type="submit" class="btn btn-block facebook-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-facebook-square"></i> Sign up with @provider.DisplayName</button>
+                                                <button type="submit" class="btn btn-block facebook-btn form-control" name="provider" value="@provider.Name" title="@Localizer["Log in using your"] @provider.DisplayName @Localizer["account"]"><i class="fab fa-facebook-square"></i> @Localizer["Sign up with"] @provider.DisplayName</button>
 
                                             </li>
                                         }
@@ -103,7 +105,7 @@
                                             {
                                                 <li>
 
-                                                <button type="submit" class="btn btn-block microsoft-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fab fa-windows"></i> Sign up with @provider.DisplayName</button>
+                                                    <button type="submit" class="btn btn-block microsoft-btn form-control" name="provider" value="@provider.Name" title="@Localizer["Log in using your"] @provider.DisplayName @Localizer["account"]"><i class="fab fa-windows"></i> @Localizer["Sign up with"] @provider.DisplayName</button>
                                                 </li>
                                             }
                                             else
@@ -112,14 +114,14 @@
                                                 {
                                                     <li>
 
-                                                    <button type="submit" class="btn btn-block google-btn form-control" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fa fa-google"></i> Sign up with @provider.DisplayName</button>
+                                                        <button type="submit" class="btn btn-block google-btn form-control" name="provider" value="@provider.Name" title="@Localizer["Log in using your"] @provider.DisplayName @Localizer["account"]"><i class="fa fa-google"></i> @Localizer["Sign up with"] @provider.DisplayName</button>
                                                     </li>
                                                 }
                                                 else
                                                 {
                                                     <li>
 
-                                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="@Localizer["Log in using your"] @provider.DisplayName @Localizer["account"]">@provider.DisplayName</button>
                                                     </li>
                                                 }
                                             }
@@ -127,8 +129,8 @@
                                     </ul>
                                 </div>
 
-                                }
-                         
+                            }
+
                         </form>
                     }
 

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "3AWKrV2rL+WQtD6OS8Or4nXhaiJGeBWU2Re5NNK3REFp63QaltGJWKFmLybRSVogqrUCxbu/i2YISltznH5zKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\natai\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.9\\microsoft.aspnetcore.jsonpatch.3.1.9.nupkg.sha512",
+    "C:\\Users\\natai\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.9\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.9.nupkg.sha512",
+    "C:\\Users\\natai\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\natai\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\natai\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

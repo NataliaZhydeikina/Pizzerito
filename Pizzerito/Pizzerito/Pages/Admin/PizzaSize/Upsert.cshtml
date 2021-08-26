@@ -1,6 +1,7 @@
 ﻿@page
 @model Pizzerito.Pages.Admin.PizzaSize.UpsertModel
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 <form method="post" asp-action="Upsert">
     <div class="container">
@@ -11,13 +12,13 @@
                 <input type="hidden" asp-for="PizzaSizeObj.Id" />
             }
             <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
-                <h2 class="text-primary font-weight-light">@(Model.PizzaSizeObj.Id!=0 ? "Update " : "Create New ")Pizza Size</h2>
+                <h2 class="text-primary font-weight-light">@(Model.PizzaSizeObj.Id!=0 ? @Localizer["Update"] : @Localizer["Create New"]) &nbsp; @Localizer["Pizza size"]</h2>
             </div>
 
             <div class="col-8 pt-3">
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaSizeObj.Size"></label>
+                        <label asp-for="PizzaSizeObj.Size">@Localizer["Pizza size"]</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control text-lowercase" onkeyup="this.value = this.value.toLowerCase();" asp-for="PizzaSizeObj.Size" />
@@ -29,10 +30,10 @@
                     <div class="col-9 offset-3">
                         <div class="row">
                             <div class="col-6">
-                                <button type="submit" class="btn btn-primary form-control">@(Model.PizzaSizeObj.Id!=0 ? "Update" : "Create")</button>
+                                <button type="submit" class="btn btn-primary form-control">@(Model.PizzaSizeObj.Id!=0 ? @Localizer["Update"] : @Localizer["Create"])</button>
                             </div>
                             <div class="col-6">
-                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
+                                <a asp-page="./Index" class="btn btn-success form-control">@Localizer["Back to List"]</a>
                             </div>
                         </div>
                     </div>

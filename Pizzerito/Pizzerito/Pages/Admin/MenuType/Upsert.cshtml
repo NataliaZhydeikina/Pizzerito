@@ -1,7 +1,7 @@
 ﻿@page
 @model Pizzerito.Pages.Admin.PizzaType.UpsertModel
-
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
@@ -13,13 +13,13 @@
                 <input type="hidden" asp-for="PizzaTypeObj.PizzaType.Id" />
             }
             <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
-                <h2 class="text-primary font-weight-light">@(Model.PizzaTypeObj.PizzaType.Id!=0 ? "Update " : "Create New ")Menu Item</h2>
+                <h2 class="text-primary font-weight-light">@(Model.PizzaTypeObj.PizzaType.Id != 0 ? @Localizer["Update"] : @Localizer["Create New"])Menu Item</h2>
             </div>
 
             <div class="col-8 pt-3">
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.Name"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.Name">@Localizer["Pizza type"]</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" onkeyup="this.value = this.value.toLowerCase();" asp-for="PizzaTypeObj.PizzaType.Name" />
@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.Price"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.Price">@Localizer["Pizza price"]</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" onkeyup="this.value = this.value.toLowerCase();" asp-for="PizzaTypeObj.PizzaType.Price" />
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.Description"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.Description">@Localizer["Pizza description"]</label>
                     </div>
                     <div class="col-9">
                         <textarea class="form-control"
@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.Image"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.Image">@Localizer["Pizza image"]</label>
                     </div>
                     <div class="col-9">
                         <input type="file" class="form-control" name="files" id="uploadBox" />
@@ -58,60 +58,60 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.CategoryId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.CategoryId">@Localizer["Pizza category"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.CategoryId,
                                                 Model.PizzaTypeObj.CategoryList,
-                                                "- Please select a Category -",
+                                                @Localizer["- Please select a Category -"].Value,
                                                 new { @class = "form-control" })
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.CategoryId"></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTypeId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTypeId">@Localizer["Pizza topping"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingTypeId,
                                                 Model.PizzaTypeObj.ToppingTypeList,
-                                                "- Please select a Topping Type -",
+                                                @Localizer["- Please select a Topping Type -"].Value,
                                                 new { @class = "form-control" })
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.ToppingTypeId"></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustTypeId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustTypeId">@Localizer["Pizza crust type"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaCrustTypeId,
                                                 Model.PizzaTypeObj.PizzaCrustTypeList,
-                                                "- Please select a Crust Type -",
+                                                @Localizer["- Please select a Crust Type -"].Value,
                                                 new { @class = "form-control" })
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaCrustTypeId"></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustFlavorId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaCrustFlavorId">@Localizer["Pizza crust flavor"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaCrustFlavorId,
                                                 Model.PizzaTypeObj.PizzaCrustFlavorList,
-                                                "- Please select a Crust Flavor -",
+                                                @Localizer["- Please select a Crust Flavor -"].Value,
                                                 new { @class = "form-control" })
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaCrustFlavorId"></span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.PizzaSizeId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.PizzaSizeId">@Localizer["Pizza size"]</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.PizzaSizeId,
                                                 Model.PizzaTypeObj.PizzaSizeList,
-                                                "- Please select a Pizza Size -",
+                                                @Localizer["- Please select a Pizza Size -"].Value,
                                                 new { @class = "form-control" })
                         <span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType.PizzaSizeId"></span>
                     </div>
@@ -121,12 +121,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingOneId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingOneId">@Localizer["Pizza topping"] 1</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingOneId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -134,12 +134,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTwoId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingTwoId">@Localizer["Pizza topping"] 2</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingTwoId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -147,12 +147,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingThreeId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingThreeId">@Localizer["Pizza topping"] 3</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingThreeId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -160,12 +160,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFourId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFourId">@Localizer["Pizza topping"] 4</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingFourId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -173,12 +173,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFiveId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingFiveId">@Localizer["Pizza topping"] 5</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingFiveId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -186,12 +186,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSixId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSixId">@Localizer["Pizza topping"] 6</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingSixId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -199,12 +199,12 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSevenId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingSevenId">@Localizer["Pizza topping"] 7</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingSevenId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
@@ -212,28 +212,16 @@
 
                 <div class="form-group row">
                     <div class="col-3">
-                        <label asp-for="PizzaTypeObj.PizzaType.ToppingEightId"></label>
+                        <label asp-for="PizzaTypeObj.PizzaType.ToppingEightId">@Localizer["Pizza topping"] 8</label>
                     </div>
                     <div class="col-9">
                         @Html.DropDownListFor(m => m.PizzaTypeObj.PizzaType.ToppingEightId,
                                                 Model.PizzaTypeObj.ToppingsList,
-                                                "- Please select a Topping -",
+                                                @Localizer["- Please select a Topping -"].Value,
                                                 new { @class = "form-control" })
 
                     </div>
                 </div>
-
-                <!--testing
-    <div class="form-group row">
-        <div class="col-3">
-            <label asp-for="PizzaTypeObj.PizzaType.ToppingTwo"></label>
-        </div>
-        <div class="col-9">
-            <select asp-for="PizzaTypeObj.PizzaType.ToppingTwo" asp-items="Html.GetEnumSelectList<Pizzerito.Models.PizzaToppings>()"></select>
-            <option selected="selected" value="">please select</option>-->
-                @*<span class="text-danger" asp-validation-for="PizzaTypeObj.PizzaType."></span>*@
-                <!--</div>
-    </div>-->
 
 
                 <div class="form-group row">
@@ -244,16 +232,16 @@
 
                                 @if (Model.PizzaTypeObj.PizzaType.Id != 0)
                                 {
-                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                    <button type="submit" class="btn btn-primary form-control">@Localizer["Update"]</button>
                                 }
                                 else
                                 {
-                                    <button type="submit" onclick="return ValidateInput()" class="btn btn-primary form-control">Create</button>
+                            <button type="submit" onclick="return ValidateInput()" class="btn btn-primary form-control">@Localizer["Create"]</button>
                                 }
                             </div>
                             <div class="col-6">
-                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
-                            </div>
+                                <a asp-page="./Index" class="btn btn-success form-control">@Localizer["Back to List"]</a>
+</div>
                         </div>
                     </div>
                 </div>
@@ -262,7 +250,7 @@
             @if (Model.PizzaTypeObj.PizzaType != null)
             {
                 <div class="col-4 p-4">
-                    <img src="@Model.PizzaTypeObj.PizzaType.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                    <img src="@Model.PizzaTypeObj.PizzaType.Image" style="border-radius:5px; border:1px solid #bbb9b9; width:100%;" />
                 </div>
             }
         </div>
@@ -280,7 +268,7 @@
 
         function ValidateInput() {
             if (document.getElementById("uploadBox").value == "") {
-                swal("Error", "Please Select an Image", "error")
+                swal(@Localizer["Error"], @Localizer["Please Select an Image"], @Localizer["error"])
                 return false;
             }
             return true;
