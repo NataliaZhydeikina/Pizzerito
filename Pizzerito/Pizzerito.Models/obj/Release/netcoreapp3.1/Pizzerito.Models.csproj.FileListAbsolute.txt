@@ -1,0 +1,9 @@
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\bin\Release\netcoreapp3.1\Pizzerito.Models.deps.json
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\bin\Release\netcoreapp3.1\Pizzerito.Models.dll
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\bin\Release\netcoreapp3.1\Pizzerito.Models.pdb
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.csprojAssemblyReference.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.csproj.CoreCompileInputs.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.AssemblyInfoInputs.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.AssemblyInfo.cs
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.dll
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Models\obj\Release\netcoreapp3.1\Pizzerito.Models.pdb

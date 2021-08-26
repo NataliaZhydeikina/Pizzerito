@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
+using Pizzerito.Models;
 using Pizzerito.Utility;
 
 namespace Pizzerito.Controllers
@@ -18,9 +20,11 @@ namespace Pizzerito.Controllers
     {
         private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
-        public CategoryController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork)
+        public CategoryController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork, IStringLocalizer<SharedResource> sharedLocalizer)
         {
+            _sharedLocalizer = sharedLocalizer;
             _logger = logger;
             _unitOfWork = unitOfWork;
         }
@@ -30,7 +34,8 @@ namespace Pizzerito.Controllers
         {
             _logger.LogInformation($"Enter /api/category");
             _logger.LogInformation($"Return all categories, returning HTTP 200 - OK");
-            return Json(new { data = _unitOfWork.Category.GetAll() });
+            //string culture = HttpContext.Request.Cookies[".AspNetCore.Culture"];
+            return Json(new { data = _unitOfWork.Category.GetAll().Select(category => new Category { Id = category.Id, DisplayOrder = category.DisplayOrder, Name = _sharedLocalizer[category.Name] }) });
         }
 
         [HttpDelete("{id}")]

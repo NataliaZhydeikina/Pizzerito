@@ -1,0 +1,234 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.DataAccess\\Pizzerito.DataAccess.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.DataAccess\\Pizzerito.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.DataAccess\\Pizzerito.DataAccess.csproj",
+        "projectName": "Pizzerito.DataAccess",
+        "projectPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.DataAccess\\Pizzerito.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\natai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\natai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\Pizzerito.Models.csproj": {
+                "projectPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\Pizzerito.Models.csproj"
+              },
+              "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj": {
+                "projectPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.16.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\Pizzerito.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\Pizzerito.Models.csproj",
+        "projectName": "Pizzerito.Models",
+        "projectPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\Pizzerito.Models.csproj",
+        "packagesPath": "C:\\Users\\natai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\natai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj",
+        "projectName": "Pizzerito.Utility",
+        "projectPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\Pizzerito.Utility.csproj",
+        "packagesPath": "C:\\Users\\natai\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito.Utility\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\natai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

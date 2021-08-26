@@ -18,6 +18,9 @@ using Stripe;
 using Pizzerito.DataAccess.Data.Initializer;
 using Pizzerito.Middlwares;
 using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 
 namespace Pizzerito
 {
@@ -26,7 +29,6 @@ namespace Pizzerito
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -34,11 +36,7 @@ namespace Pizzerito
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc()
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddControllersWithViews()
-                .AddViewLocalization();
-
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ApplicationDatabase")));
@@ -54,8 +52,29 @@ namespace Pizzerito
                 options.Cookie.IsEssential = true;
             });
 
-            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix); 
-             
+            services
+                .AddMvc(options => options.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; });
+
+            CultureInfo[] supportedCultures = new[]
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("ru-RU"),
+                new CultureInfo("uk-UA")
+            };
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en-US");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                    {
+                        new QueryStringRequestCultureProvider(),
+                        new CookieRequestCultureProvider()
+                    };
+            });
+
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
@@ -63,14 +82,15 @@ namespace Pizzerito
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
-
-
-            services.AddControllersWithViews().AddRazorRuntimeCompilation().AddJsonOptions(o =>
+            services
+                .AddControllersWithViews()
+                .AddDataAnnotationsLocalization()
+                .AddRazorRuntimeCompilation()
+                .AddJsonOptions(o =>
             {
                 o.JsonSerializerOptions.IgnoreNullValues = true;
                 o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-            }).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
-
+            });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDbInitializer, DbInitializer>();
@@ -92,6 +112,7 @@ namespace Pizzerito
                 options.ClientId = Configuration["Authentication:Google:ClientId"];
                 options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -99,6 +120,7 @@ namespace Pizzerito
         {
             app.UseMiddleware<HttpRequestBodyMiddleware>();
             app.UseMiddleware<UnhandledExceptionMiddleware>();
+           
 
             if (env.IsDevelopment())
             {
@@ -121,15 +143,10 @@ namespace Pizzerito
             app.UseAuthentication();
             app.UseAuthorization();
 
-            var supportedCultures = new[] { "en", "ua" };
-            var localizationOptions = new RequestLocalizationOptions()
-                .SetDefaultCulture(supportedCultures[1])
-                .AddSupportedCultures(supportedCultures)
-                .AddSupportedUICultures(supportedCultures);
-
-            app.UseRequestLocalization(localizationOptions);
+            var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(options.Value);
+            app.UseMiddleware<RequestLocalizationCookiesMiddleware>();
             app.UseMvc();
-
             StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
         }
     }

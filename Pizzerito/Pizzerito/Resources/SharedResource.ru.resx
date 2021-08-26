@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="alfredo sauce" xml:space="preserve">
+    <value>соус альфредо</value>
+  </data>
+  <data name="barbecue" xml:space="preserve">
+    <value>барбекю</value>
+  </data>
+  <data name="barbecue sauce" xml:space="preserve">
+    <value>соус барбекю</value>
+  </data>
+  <data name="Bavarian sausages" xml:space="preserve">
+    <value>Баварские колбаски</value>
+  </data>
+  <data name="blue cheese" xml:space="preserve">
+    <value>голубой сыр</value>
+  </data>
+  <data name="bulgarian pepper" xml:space="preserve">
+    <value>перец болгарский</value>
+  </data>
+  <data name="burger sauce" xml:space="preserve">
+    <value>соус для бургеров</value>
+  </data>
+  <data name="cherry tomato" xml:space="preserve">
+    <value>помидоры черри</value>
+  </data>
+  <data name="chicken" xml:space="preserve">
+    <value>курица</value>
+  </data>
+  <data name="corn" xml:space="preserve">
+    <value>кукуруза</value>
+  </data>
+  <data name="cucumbers" xml:space="preserve">
+    <value>огурцы</value>
+  </data>
+  <data name="feta cheese" xml:space="preserve">
+    <value>сыр фета</value>
+  </data>
+  <data name="garlic sauce" xml:space="preserve">
+    <value>чесночный соус</value>
+  </data>
+  <data name="ham" xml:space="preserve">
+    <value>ветчина</value>
+  </data>
+  <data name="meatballs" xml:space="preserve">
+    <value>фрикадельки</value>
+  </data>
+  <data name="mozzarella" xml:space="preserve">
+    <value>моцарелла</value>
+  </data>
+  <data name="mushrooms" xml:space="preserve">
+    <value>грибы</value>
+  </data>
+  <data name="olives" xml:space="preserve">
+    <value>оливки</value>
+  </data>
+  <data name="onion" xml:space="preserve">
+    <value>лук</value>
+  </data>
+  <data name="parmesan" xml:space="preserve">
+    <value>пармезан</value>
+  </data>
+  <data name="pepperoni" xml:space="preserve">
+    <value>пепперони</value>
+  </data>
+  <data name="pineapple" xml:space="preserve">
+    <value>ананас</value>
+  </data>
+  <data name="spinach" xml:space="preserve">
+    <value>шпинат</value>
+  </data>
+  <data name="tomatoes" xml:space="preserve">
+    <value>помидоры</value>
+  </data>
+  <data name="tuna" xml:space="preserve">
+    <value>тунец</value>
+  </data>
+  <data name="tuscan pizza" xml:space="preserve">
+    <value>тосканская пицца</value>
+  </data>
+  <data name="barbecue pizza" xml:space="preserve">
+    <value>пицца барбекю</value>
+  </data>
+  <data name="pizza carbonara" xml:space="preserve">
+    <value>пицца карбонара</value>
+  </data>
+  <data name="pizza five cheeses" xml:space="preserve">
+    <value>пицца пять сыров</value>
+  </data>
+  <data name="pizza with tomatoes" xml:space="preserve">
+    <value>пицца с помидорами</value>
+  </data>
+  <data name="boston pizza" xml:space="preserve">
+    <value>бостонская пицца</value>
+  </data>
+  <data name="texas pizza" xml:space="preserve">
+    <value>техасская пицца</value>
+  </data>
+  <data name="pizza vegetable extravaganza" xml:space="preserve">
+    <value>пицца овощная феерия</value>
+  </data>
+  <data name="tuna pizza" xml:space="preserve">
+    <value>пицца с тунцом</value>
+  </data>
+  <data name="pizza spinach and feta" xml:space="preserve">
+    <value>пицца со шпинатом и фета</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="s" xml:space="preserve">
+    <value>м</value>
+  </data>
+  <data name="XL" xml:space="preserve">
+    <value>XL</value>
+  </data>
+  <data name=". a double dough crust is somewhat self-explanatory – it’s two layers of dough nestled on top of each other. the effect is a thicker crust that is not as dense as it would be if it were formed from one ball of dough.  there are multiple variations of this as well, most notably the stuffed crust style. this can be reflected through sandwiching topping between two layers of dough and then topping with cheese, however it is much more famously reflected through stuffing cheese into the outer edge of the crust and creating a top layer of dough to rest just on top of it. this is type of piece that’s actually best enjoyed crust side first!" xml:space="preserve">
+    <value>Двойная корка теста не требует пояснений - это два слоя теста, уложенные друг на друга. В результате получается более толстая корочка, которая не такая плотная, как если бы она была образована из одного шарика теста. есть несколько вариантов этого, в первую очередь стиль фаршированной корочки. это может быть отражено в прослоении между двумя слоями теста, а затем в посыпке сыром, однако это гораздо лучше отражается в начинке сыра по внешнему краю корочки и создании верхнего слоя теста, лежащего прямо поверх него. это тот тип куска, который лучше всего нравится в первую очередь корочкой!</value>
+  </data>
+  <data name="&lt;p&gt;Barbecue Pizza&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Bacon, Chicken, Mushrooms, Onions, Mozzarella, Barbecue Sauce&lt;/p&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца барбекю &lt;/p&gt;
+&lt;p&gt; Бекон, курица, грибы, лук, моцарелла, соус барбекю &lt;/p&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Boston Pizza&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Bavarian sausages, Mushrooms, Mozzarella, Alfredo Sauce&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: -55px; top: -13.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Бостонская пицца &lt;/p&gt;
+&lt;p&gt; Баварские колбаски, Грибы, Моцарелла, Соус Альфредо &lt;/p&gt;
+&lt;div id="gtx-trans" style="position: absolute; left: -55px; top: -13.3333px;"&gt;
+&lt;div class="gtx-trans-icon"&gt; &amp;nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Pizza Carbonara&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Bacon, Ham, Mushrooms, Onions, Mozzarella, Alfredo Sauce&lt;/p&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца Карбонара &lt;/p&gt;
+&lt;p&gt; Бекон, ветчина, грибы, лук, моцарелла, соус Альфредо &lt;/p&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Pizza Five Cheeses&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Parmesan, Bergader Blue, Mozzarella, Alfredo Sauce, Feta, Cheddar&lt;/p&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца Пять сыров &lt;/p&gt;
+&lt;p&gt; Пармезан, Бергадер Блю, Моцарелла, Соус Альфредо, Фета, Чеддер &lt;/p&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Pizza Spinach and Feta&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Mushrooms, Olives, Spinach, Tomatoes, Bell peppers, Mozzarella, Alfredo sauce, Feta&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: -23px; top: -13.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца со шпинатом и фета &lt;/p&gt;
+&lt;p&gt; Грибы, оливки, шпинат, помидоры, сладкий перец, моцарелла, соус Альфредо, фета &lt;/p&gt;
+&lt;div id="gtx-trans" style="position: absolute; left: -23px; top: -13.3333px;"&gt;
+&lt;div class="gtx-trans-icon"&gt; &amp;nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Pizza Vegetable Extravaganza&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Mushrooms, Olives, Onions, Tomatoes, Bell Pepper, Mozzarella, Sauce&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: 12px; top: 82.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца овощная феерия &lt;/p&gt;
+&lt;p&gt; Грибы, оливки, лук, помидоры, сладкий перец, моцарелла, соус &lt;/p&gt;
+&lt;div id = "gtx-trans" style = "position: absolute; left: 12px; top: 82.3333px;"&gt;
+&lt;div class = "gtx-trans-icon"&gt; &amp; nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;pizza with tomatoes&lt;/p&gt;&#xD;&#xA;&lt;p&gt;&amp;nbsp;Tomatoes, Mozzarella, Barbecue Sauce&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: 37px; top: 32.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; пицца с помидорами &lt;/p&gt;
+&lt;p&gt;Помидоры, Моцарелла, Соус барбекю &lt;/p&gt;
+&lt;div id="gtx-trans" style="position: absolute; left: 37px; top: 32.3333px;"&gt;
+&lt;div class="gtx-trans-icon"&gt; &amp;nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Texas Pizza&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Bavarian sausages, Corn, Mushrooms, Onions, Mozzarella, Barbecue sauce&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: -51px; top: -13.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Техасская пицца &lt;/p&gt;
+&lt;p&gt; Баварские колбаски, Кукуруза, Грибы, Лук, Моцарелла, Соус Барбекю &lt;/p&gt;
+&lt;div id="gtx-trans" style="position: absolute; left: -51px; top: -13.3333px;"&gt;
+&lt;div class="gtx-trans-icon"&gt; &amp;nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;Tuna Pizza&lt;/p&gt;&#xD;&#xA;&lt;p&gt;Mozzarella, Sauce, Tuna&lt;/p&gt;&#xD;&#xA;&lt;div id=&quot;gtx-trans&quot; style=&quot;position: absolute; left: -40px; top: -13.3333px;&quot;&gt;&#xD;&#xA;&lt;div class=&quot;gtx-trans-icon&quot;&gt;&amp;nbsp;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;" xml:space="preserve">
+    <value>&lt;p&gt; Пицца с тунцом &lt;/p&gt;
+&lt;p&gt; Моцарелла, Соус, Тунец &lt;/p&gt;
+&lt;div id="gtx-trans" style="position: absolute; left: -40px; top: -13.3333px;"&gt;
+&lt;div class="gtx-trans-icon"&gt; &amp;nbsp; &lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="&lt;p&gt;tuscan pizza&lt;/p&gt;" xml:space="preserve">
+    <value>&lt;p&gt; тосканская пицца &lt;/p&gt;</value>
+  </data>
+  <data name="&lt;strong&gt;The Development environment shouldn't be enabled for deployed applications.&lt;/strong&gt; It can result in displaying sensitive information from exceptions to end users. For local debugging, enable the &lt;strong&gt;Development&lt;/strong&gt; environment by setting the &lt;strong&gt;ASPNETCORE_ENVIRONMENT&lt;/strong&gt; environment variable to &lt;strong&gt;Development&lt;/strong&gt; and restarting the app." xml:space="preserve">
+    <value>&lt;strong&gt; Среду разработки не следует включать для развернутых приложений. &lt;/strong&gt; Это может привести к отображению конфиденциальной информации от исключений для конечных пользователей. Для локальной отладки включите среду &lt;strong&gt; Разработка &lt;/strong&gt;, установив для переменной среды &lt;strong&gt; ASPNETCORE_ENVIRONMENT &lt;/strong&gt; значение &lt;strong&gt; Разработка &lt;/strong&gt; и перезапустив приложение.</value>
+  </data>
+  <data name="a thick crust is typically rectangular (though not always), and it is characterized by being the style of crust most capable of allowing for massive amounts of delicious ingredients to rest on top of it. and while each of the crusts listed below would score an “a+” when assessed on the merits of their pizza integrity, their incredible flavors and textures should not be ignored. from the buttery crust of the chicago deep-dish pizza to the crispy-on-the-outside, fluffy-on-the-inside crust found in detroit and sicilian styles, there are many compelling reasons for thick crust’s rising popularity throughout the u.s." xml:space="preserve">
+    <value>Толстая корочка обычно имеет прямоугольную форму (хотя и не всегда), и она характеризуется тем, что это корочка, наиболее подходящая для того, чтобы на нее можно было положить огромное количество вкусных ингредиентов. И хотя каждая из перечисленных ниже корочок получит оценку «+» при оценке качества их пиццы, их невероятный вкус и текстуру нельзя игнорировать. От маслянистой корочки пиццы для глубокого блюда из чикаго до хрустящей снаружи и пушистой внутри корочки, характерной для детройтского и сицилийского стилей, есть много веских причин для растущей популярности толстой корочки в США.</value>
+  </data>
+  <data name="add an extra toasty layer to your pizza with sesame seeds – this flavored crust® is for the adventurous ones." xml:space="preserve">
+    <value>Добавьте к пицце дополнительный тост с семенами кунжута - эта ароматная корочка® для тех, кто любит приключения.</value>
+  </data>
+  <data name="Add Categories" xml:space="preserve">
+    <value>Добавить категории</value>
+  </data>
+  <data name="Add Crust Flavors" xml:space="preserve">
+    <value>Добавить тип корочки</value>
+  </data>
+  <data name="Add Crust Types" xml:space="preserve">
+    <value>Добавить вкус корочки</value>
+  </data>
+  <data name="Add New Menu Item" xml:space="preserve">
+    <value>Добавить новый пункт меню</value>
+  </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>Добавить нового пользователя</value>
+  </data>
+  <data name="Add Pizza Sizes" xml:space="preserve">
+    <value>Добавить размер пиццы</value>
+  </data>
+  <data name="Add Topping Types" xml:space="preserve">
+    <value>Добавить типы топпинга</value>
+  </data>
+  <data name="Add Toppings" xml:space="preserve">
+    <value>Добавить топпинг</value>
+  </data>
+  <data name="An error occurred while processing your request" xml:space="preserve">
+    <value>Произошла ошибка при обработке вашего запроса</value>
+  </data>
+  <data name="as people are becoming more aware gluten insensitivity and celiac disease, so to is the food industry. gluten-free pizza doughs are comprised of standard ingredients like water and yeast, but are bound with gluten-free flour. a flour is considered gluten-free if it is not the byproduct of wheat or barley, which as it turns out describes a ton of different ingredients! flours for gluten-free pizza dough can be made typically from soy, rice, garbanzo beans, tapioca, and multiple combinations between them. compared to crusts made with wheat flour, a gluten-free crust is likely to be considerably denser and less pliable, meaning for practical reasons that they are designed almost exclusively for thin crust pizzas" xml:space="preserve">
+    <value>По мере того как люди становятся все более осведомленными о нечувствительности к глютену и глютеновой болезни, растет и пищевая промышленность. Тесто для пиццы без глютена состоит из стандартных ингредиентов, таких как вода и дрожжи, но связано с мукой без глютена. мука считается безглютеновой, если она не является побочным продуктом пшеницы или ячменя, которые, как оказалось, содержат массу различных ингредиентов! мука для безглютенового теста для пиццы может быть приготовлена, как правило, из сои, риса, бобов гарбанзо, тапиоки и множества их комбинаций. по сравнению с корками, сделанными из пшеничной муки, корочка без глютена, вероятно, будет значительно более плотной и менее податливой, что означает, что по практическим соображениям они предназначены почти исключительно для пиццы на тонком тесте.</value>
+  </data>
+  <data name="asiago cheese" xml:space="preserve">
+    <value>сыр азиаго</value>
+  </data>
+  <data name="butter" xml:space="preserve">
+    <value>масло</value>
+  </data>
+  <data name="butter cheese" xml:space="preserve">
+    <value>сливочный сыр</value>
+  </data>
+  <data name="cajun" xml:space="preserve">
+    <value>каджун</value>
+  </data>
+  <data name="Customer User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="Development Mode" xml:space="preserve">
+    <value>Режим разработки</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Following are the Admin User Account that exists by default" xml:space="preserve">
+    <value>Ниже приведены учетные записи, которые существуют по умолчанию.</value>
+  </data>
+  <data name="Front Desk User" xml:space="preserve">
+    <value>Администратор</value>
+  </data>
+  <data name="GitHub Repo Here" xml:space="preserve">
+    <value>GitHub репозиторий</value>
+  </data>
+  <data name="give your pizza a kick with our spicy cajun blend. pizza will never be the same." xml:space="preserve">
+    <value>Сделайте свою пиццу идеальной с нашей пряной смесью каджунов. Пицца никогда не будет прежней.</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Привет</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="If any Manager account locks any other user using Content Management portal, they will be able to lock them for only 2 min and system will unlock them after 2min." xml:space="preserve">
+    <value>Если какая-либо учетная запись менеджера блокирует любого другого пользователя, использующего портал управления контентом, етот пользователь будет заблокирован только на 2 минуты, и система разблокирует его через 2 минуты.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="Manager Order" xml:space="preserve">
+    <value>Изменить заказ</value>
+  </data>
+  <data name="Manager User" xml:space="preserve">
+    <value>Менеджер</value>
+  </data>
+  <data name="Order History" xml:space="preserve">
+    <value>История заказов</value>
+  </data>
+  <data name="Order Pickup" xml:space="preserve">
+    <value>Вывоз заказов</value>
+  </data>
+  <data name="our butter flavored crust® is golden, crispy &amp; provides the perfect base for any pizza combination." xml:space="preserve">
+    <value>Корка со вкусом масла имеет золотистую хрустящую структуру и является идеальной основой для любой комбинации пиццы.</value>
+  </data>
+  <data name="Pizza Maker" xml:space="preserve">
+    <value>Пиццайоло</value>
+  </data>
+  <data name="Pizzerito Demo Ordering System" xml:space="preserve">
+    <value>Demo системы заказов Pizzerito</value>
+  </data>
+  <data name="Pizzerito Ordering System - Demo" xml:space="preserve">
+    <value>Система заказов Pizzerito - Demo</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Конфиденциальность</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Зарегистроваться</value>
+  </data>
+  <data name="sesame" xml:space="preserve">
+    <value>кунжут</value>
+  </data>
+  <data name="Swapping to the &lt;strong&gt;Development&lt;/strong&gt; environment displays detailed information about the error that occurred." xml:space="preserve">
+    <value>При переходе в среду &lt;strong&gt; Разработка &lt;/strong&gt; отображается подробная информация о возникшей ошибке.</value>
+  </data>
+  <data name="these are the crusts of the more avant garde variety. these doughs are typically flourless and/or yeast-less and can be made up of anything from just cheese, certain starchier or fiber-heavy veggies, and various other gluten-free and vegan-friendly ingredients. for those suffering from gluten insensitivity or allergies, as well as those living the vegan lifestyle, these are going to be the crusts you want to seek out when those pizza cravings grab hold." xml:space="preserve">
+    <value>Это корочки более авангардного сорта. это тесто, как правило, не содержит муки и / или дрожжей и может состоять из чего угодно, от просто сыра, некоторых овощей с высоким содержанием крахмала или клетчатки и различных других безглютеновых и подходящих для веганов ингредиентов. для тех, кто страдает нечувствительностью к глютену или аллергией, а также для тех, кто ведет веганский образ жизни, это будут корочки, которые вы захотите найти, когда тяга к пицце схватит.</value>
+  </data>
+  <data name="thin crust is commonly thought of as the first type of crust to popular pizza on the global stage, and it is the de-facto pizza standard. thin crust includes a plethora of different textures and flavor profiles, so there is a little something for everyone to enjoy." xml:space="preserve">
+    <value>Тонкое тесто обычно считается первым типом теста для популярной пиццы на мировой арене, и это де-факто стандарт пиццы. Тонкое тесто включает в себя множество различных текстур и вкусовых профилей, так что каждый найдет что-нибудь для себя.</value>
+  </data>
+  <data name="this golden buttered and parmesan encrusted flavored crust® gives your pizza a cheesy explosion of flavor." xml:space="preserve">
+    <value>Эта ароматная корка с золотистым маслом и пармезаном придает вашей пицце взрывной сырный вкус.</value>
+  </data>
+  <data name="top our fresh pizza dough with authentic italian asiago cheese on the edge for a sharp taste." xml:space="preserve">
+    <value>Чтобы получить острый вкус, добавьте в свежее тесто для пиццы настоящий итальянский сыр азиаго.</value>
+  </data>
+  <data name="Website Overview:" xml:space="preserve">
+    <value>Обзор веб-сайта:</value>
+  </data>
+  <data name="You can create new accounts as you wish! If you prefer to create any accounts please login using the Admin/ Manager User and navigate to Users inside Content Management." xml:space="preserve">
+    <value>Вы можете создавать новые учетные записи по своему желанию! Если вы предпочитаете создавать какие-либо учетные записи, войдите в систему с помощью учетной записи Менеджера/Администратора и перейдите в раздел «Пользователи» в разделе «Управление контентом».</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Админ</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Back to List" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Being Prepared" xml:space="preserve">
+    <value>Готов к выдаче</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Отменен</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Завершен</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Create New" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Submitted" xml:space="preserve">
+    <value>В работе</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="bigpizza" xml:space="preserve">
+    <value>большая пицца</value>
+  </data>
+  <data name="custom crusts" xml:space="preserve">
+    <value>особенная корочка</value>
+  </data>
+  <data name="DeliverDriver" xml:space="preserve">
+    <value>Курьер</value>
+  </data>
+  <data name="double-dough/stuffed-crust style" xml:space="preserve">
+    <value>двойное/фаршированное тесто</value>
+  </data>
+  <data name="extra" xml:space="preserve">
+    <value>экстра большая пицца</value>
+  </data>
+  <data name="fish" xml:space="preserve">
+    <value>рыба</value>
+  </data>
+  <data name="FrontDesk" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="gluten-free" xml:space="preserve">
+    <value>без глютена</value>
+  </data>
+  <data name="justpizza" xml:space="preserve">
+    <value>просто пицца</value>
+  </data>
+  <data name="large" xml:space="preserve">
+    <value>большая</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Менеджер</value>
+  </data>
+  <data name="meat" xml:space="preserve">
+    <value>мясо</value>
+  </data>
+  <data name="medium" xml:space="preserve">
+    <value>средняя</value>
+  </data>
+  <data name="others" xml:space="preserve">
+    <value>другое</value>
+  </data>
+  <data name="PizzaMaker" xml:space="preserve">
+    <value>Пиццайоло</value>
+  </data>
+  <data name="small" xml:space="preserve">
+    <value>маленькая</value>
+  </data>
+  <data name="smallpizza" xml:space="preserve">
+    <value>маленькая пицца</value>
+  </data>
+  <data name="thick crust" xml:space="preserve">
+    <value>толстая корка</value>
+  </data>
+  <data name="thin crusts" xml:space="preserve">
+    <value>тонкие корочки</value>
+  </data>
+  <data name="veganpizza" xml:space="preserve">
+    <value>веганская пицца</value>
+  </data>
+  <data name="vegetables" xml:space="preserve">
+    <value>овощи</value>
+  </data>
+  <data name="xlarge" xml:space="preserve">
+    <value>очень большая</value>
+  </data>
+</root>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 
@@ -19,12 +20,14 @@ namespace Pizzerito.Controllers
         private readonly IUnitOfWork _unitOfWork;
         //Will be deleting images from server
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly IStringLocalizer<SharedResource> _sharedLocalizer;
 
-        public MenuTypeController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
+        public MenuTypeController(ILogger<CategoryController> logger, IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment, IStringLocalizer<SharedResource> sharedLocalizer)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
             _hostingEnvironment = hostEnvironment;
+            _sharedLocalizer = sharedLocalizer;
         }
 
         [HttpGet]
@@ -35,7 +38,14 @@ namespace Pizzerito.Controllers
             return Json(new
             {
                 data = _unitOfWork.PizzaType
-                .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize")
+                .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize").Select(pizzaType => {
+                    pizzaType.Name = _sharedLocalizer[pizzaType.Name];
+                    pizzaType.Description = _sharedLocalizer[pizzaType.Description];
+                    pizzaType.Category.Name = _sharedLocalizer[pizzaType.Category.Name];
+                    pizzaType.ToppingType.Name = _sharedLocalizer[pizzaType.ToppingType.Name];
+                    pizzaType.PizzaSize.Size = _sharedLocalizer[pizzaType.PizzaSize.Size];
+                    return pizzaType;
+                  })
             });
 
         }

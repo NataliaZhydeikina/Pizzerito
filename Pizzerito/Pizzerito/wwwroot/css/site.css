@@ -183,3 +183,15 @@ body {
 .dot-yellow {
 	background-color: #fecb02;
 }
+
+.dropdown-item.text-white:hover, .dropdown-item.text-white:focus {
+	color: #151515!important;
+}
+
+.link-dark {
+	text-decoration: none;
+	color: #333;
+}
+.text-white .link-dark {
+	color: #fff;
+}

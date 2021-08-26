@@ -1,0 +1,9 @@
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\bin\Debug\netcoreapp3.1\Pizzerito.Utility.deps.json
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\bin\Debug\netcoreapp3.1\Pizzerito.Utility.dll
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\bin\Debug\netcoreapp3.1\Pizzerito.Utility.pdb
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.csprojAssemblyReference.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.csproj.CoreCompileInputs.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.AssemblyInfoInputs.cache
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.AssemblyInfo.cs
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.dll
+C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.Utility\obj\Debug\netcoreapp3.1\Pizzerito.Utility.pdb

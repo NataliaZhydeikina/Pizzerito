@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Shopping Cart";
 }
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 <form method="post">
 
@@ -16,10 +20,10 @@
                     <div class="card-header bg-light text-success ml-0 row container">
                         <div class="col-6 h4 text-nowrap">
                             <i class="fa fa-shopping-cart"></i> &nbsp;
-                            Shopping Cart
+                            @Localizer["Shopping Cart"]
                         </div>
                         <div class="col-6 text-right">
-                            <a asp-page="../Home/Index" class="btn popup-button-primary text-center btn-product red text-decoration-none">Continue Shopping</a>
+                            <a asp-page="../Home/Index" class="btn popup-button-primary text-center btn-product red text-decoration-none">@Localizer["Continue Shopping"]</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -30,11 +34,11 @@
                                     <img src="@item.PizzaType.Image" class="rounded card-product" style="height:100px!important; border: none!important;" />
                                 </div>
                                 <div class="col-12 text-sm-center col-lg-5 text-lg-left">
-                                    <h4 class="text-capitalize">@item.PizzaType.Name @item.PizzaType.Category.Name </h4>
+                                    <h4 class="text-capitalize">@SharedLocalizer[@item.PizzaType.Name] @SharedLocalizer[@item.PizzaType.Category.Name]</h4>
                                 </div>
                                 <div class="col-12 text-sm-center col-lg-5 text-lg-right row">
                                     <div class="col-4 text-md-right" style="padding-top:5px;">
-                                        <h6><strong>$@item.PizzaType.Price <span class="text-muted">x</span> @item.Count </strong></h6>
+                                        <h6><strong>@(item.PizzaType.Price.ToString("C", CultureInfo.CurrentCulture))<span class="text-muted">x</span> @item.Count </strong></h6>
                                     </div>
                                     <div class="col-6 col-sm-4 col-lg-6">
                                         <div class="float-right mx-1">
@@ -66,7 +70,7 @@
                             <div class="col-12 col-md-6 offset-md-1 col-lg-4 offset-lg-3 pr-4">
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between bg-light">
-                                        <span class="text-info"> Total (USD)</span>
+                                        <span class="text-info">@Localizer["Total (USD)"]</span>
                                         <strong class="text-info">$<span id="txtOrderTotal">@Model.OrderDetailsCartVM.OrderHeader.OrderTotal.ToString("#,##0.00")</span></strong>
                                     </li>
                                 </ul>
@@ -77,8 +81,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="col-12 col-lg-4 offset-lg-8 col-md-6 offset-md-6">
-                            <a asp-page="Summary" class="popup-button form-control btn-product green text-decoration-none text-center" style="line-height: 1;">Summary</a>
-                        </div>
+                            <a asp-page="Summary" class="popup-button form-control btn-product green text-decoration-none text-center" style="line-height: 1;">@Localizer["Summary"]</a>
+</div>
                     </div>
                 </div>
             </div>
@@ -87,9 +91,9 @@
     }
     else
     {
-        <div>
-            Please add items to shopping cart.
-        </div>
+<div>
+    @Localizer["Please add items to shopping cart."]
+</div>
     }
 
 </form>
