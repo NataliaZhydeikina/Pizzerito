@@ -1,0 +1,806 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\natai\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (208ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (174ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [AspNetRoles] AS [a]
+              WHERE [a].[Name] = N'Manager') THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Request GET: /
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Executed DbCommand (293ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[Discriminator] IN (N'IdentityUser', N'ApplicationUser') AND ([a].[Id] = @__p_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Executed DbCommand (121ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+      FROM [AspNetUserClaims] AS [a]
+      WHERE [a].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Executed DbCommand (121ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a0].[Name]
+      FROM [AspNetUserRoles] AS [a]
+      INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+      WHERE [a].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Executed DbCommand (125ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Executed DbCommand (129ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a].[ClaimType], [a].[ClaimValue]
+      FROM [AspNetRoleClaims] AS [a]
+      WHERE [a].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Mvc.RedirectToRouteResult[1]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId: => /Index
+      Executing RedirectToPageResult, redirecting to /Customer/Home/Index.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Customer/Home  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/ RequestId:8000008f-0001-f800-b63f-84710c7967bb, SpanId:|a422a00-4544da5557d126ee., TraceId:a422a00-4544da5557d126ee, ParentId:
+      Request finished in 3796.9959ms 302 
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId:
+      Request GET: /Customer/Home
+
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Executed DbCommand (133ms) [Parameters=[@__claim_Value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [s].[Id], [s].[ApplicationUserId], [s].[Count], [s].[PizzaTypeId]
+      FROM [ShoppingCart] AS [s]
+      WHERE [s].[ApplicationUserId] = @__claim_Value_0
+info: Microsoft.AspNetCore.Session.DistributedSession[2]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Accessing expired session, Key:ee0ba83e-310e-f969-4be6-bc4636743ed1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Executed DbCommand (160ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[CategoryId], [p].[Description], [p].[Image], [p].[Name], [p].[PizzaCrustFlavorId], [p].[PizzaCrustTypeId], [p].[PizzaSizeId], [p].[Price], [p].[ToppingEightId], [p].[ToppingFiveId], [p].[ToppingFourId], [p].[ToppingOneId], [p].[ToppingSevenId], [p].[ToppingSixId], [p].[ToppingThreeId], [p].[ToppingTwoId], [p].[ToppingTypeId], [c].[Id], [c].[DisplayOrder], [c].[Name], [t].[Id], [t].[Name], [p1].[Id], [p1].[CrustType], [p1].[CrustTypeDescription], [p2].[Id], [p2].[CrustFlavor], [p2].[CrustFlavorDescription], [p0].[Id], [p0].[Size]
+      FROM [PizzaType] AS [p]
+      INNER JOIN [PizzaSize] AS [p0] ON [p].[PizzaSizeId] = [p0].[Id]
+      INNER JOIN [Category] AS [c] ON [p].[CategoryId] = [c].[Id]
+      INNER JOIN [ToppingType] AS [t] ON [p].[ToppingTypeId] = [t].[Id]
+      INNER JOIN [PizzaCrustType] AS [p1] ON [p].[PizzaCrustTypeId] = [p1].[Id]
+      INNER JOIN [PizzaCrustFlavor] AS [p2] ON [p].[PizzaCrustFlavorId] = [p2].[Id]
+      ORDER BY [p0].[Size]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [c].[Id], [c].[DisplayOrder], [c].[Name]
+      FROM [Category] AS [c]
+      ORDER BY [c].[DisplayOrder]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name]
+      FROM [ToppingType] AS [t]
+      ORDER BY [t].[Id]
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId: => /Customer/Home/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/css/site.css RequestId:80000098-0003-f200-b63f-84710c7967bb, SpanId:|a422a02-4544da5557d126ee., TraceId:a422a02-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/css/site.css  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/css/site.css RequestId:80000098-0003-f200-b63f-84710c7967bb, SpanId:|a422a02-4544da5557d126ee., TraceId:a422a02-4544da5557d126ee, ParentId:
+      Request GET: /css/site.css
+
+info: Microsoft.AspNetCore.Session.DistributedSession[3]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId:
+      Session started; Key:ee0ba83e-310e-f969-4be6-bc4636743ed1, Id:322364b5-0812-cebe-0da5-3e5f77c16726
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Customer/Home RequestId:8000008d-0000-fb00-b63f-84710c7967bb, SpanId:|a422a01-4544da5557d126ee., TraceId:a422a01-4544da5557d126ee, ParentId:
+      Request finished in 2889.5815ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      => RequestPath:/css/site.css RequestId:80000098-0003-f200-b63f-84710c7967bb, SpanId:|a422a02-4544da5557d126ee., TraceId:a422a02-4544da5557d126ee, ParentId:
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/css/site.css RequestId:80000098-0003-f200-b63f-84710c7967bb, SpanId:|a422a02-4544da5557d126ee., TraceId:a422a02-4544da5557d126ee, ParentId:
+      Request finished in 1053.8287ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Order/OrderList  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Order/OrderList
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000096-0000-fe00-b63f-84710c7967bb, SpanId:|a422a03-4544da5557d126ee., TraceId:a422a03-4544da5557d126ee, ParentId:
+      Request finished in 222.4773ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/order?status=null&startDate=2021-07-26T11:05:27.529Z&endDate=2021-09-26T11:05:27.529Z&_=1629975926996  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Request GET: /api/order
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Order", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, System.DateTime, System.DateTime) on controller Pizzerito.Controllers.OrderController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Enter /api/order
+fail: Microsoft.EntityFrameworkCore.Database.Command[20102]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Failed executing DbCommand (19,222ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Comments], [o].[OrderDate], [o].[OrderTotal], [o].[PaymentStatus], [o].[PhoneNumber], [o].[PickUpTime], [o].[PickupName], [o].[Status], [o].[TransactionId], [o].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FirstName], [t].[LastName]
+      FROM [OrderHeader] AS [o]
+      INNER JOIN (
+          SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+          FROM [AspNetUsers] AS [a]
+          WHERE [a].[Discriminator] = N'ApplicationUser'
+      ) AS [t] ON [o].[UserId] = [t].[Id]
+fail: Microsoft.EntityFrameworkCore.Query[10100]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      An exception occurred while iterating over the results of a query for context type 'Pizzerito.DataAccess.ApplicationDbContext'.
+      System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseSqlServer' call.
+       ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+       ---> System.ComponentModel.Win32Exception (121): The semaphore timeout period has expired.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+         at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+         at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+         at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+         at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+         at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+         at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+         at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+         at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+         at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+         at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+         at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+         at System.Data.Common.DbCommand.ExecuteReader()
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+      ClientConnectionId:9a88063d-04cc-4e1d-8011-158ae604a0ee
+      Error Number:121,State:0,Class:20
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+         at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+ ---> System.ComponentModel.Win32Exception (121): The semaphore timeout period has expired.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:9a88063d-04cc-4e1d-8011-158ae604a0ee
+Error Number:121,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Order/OrderList?status=null&start=2021-04-05T21:00:00.000Z&end=2021-09-17T20:59:59.999Z  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Order/OrderList
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.OrderController.Get (Pizzerito) in 36917.0272ms
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:80000098-0000-fe00-b63f-84710c7967bb, SpanId:|a422a05-4544da5557d126ee., TraceId:a422a05-4544da5557d126ee, ParentId:
+      Request finished in 172.1214ms 200 text/html; charset=utf-8
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      
+      IF EXISTS
+          (SELECT *
+           FROM [sys].[objects] o
+           WHERE [o].[type] = 'U'
+           AND [o].[is_ms_shipped] = 0
+           AND NOT EXISTS (SELECT *
+               FROM [sys].[extended_properties] AS [ep]
+               WHERE [ep].[major_id] = [o].[object_id]
+                   AND [ep].[minor_id] = 0
+                   AND [ep].[class] = 1
+                   AND [ep].[name] = N'microsoft_database_tools_support'
+          )
+      )
+      SELECT 1 ELSE SELECT 0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Executed DbCommand (121ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/order?status=null&startDate=2021-04-05T21:00:00.000Z&endDate=2021-09-17T20:59:59.999Z&_=1629975965664  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId:
+      Request GET: /api/order
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Order", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, System.DateTime, System.DateTime) on controller Pizzerito.Controllers.OrderController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Enter /api/order
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Executed DbCommand (170ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The semaphore timeout period has expired.)
+ ---> System.ComponentModel.Win32Exception (121): The semaphore timeout period has expired.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:9a88063d-04cc-4e1d-8011-158ae604a0ee
+Error Number:121,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Pizzerito.DataAccess.Data.Repository.Repository`1.GetAll(Expression`1 filter, Func`2 orderBy, String includeProperties) in C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito.DataAccess\Data\Repository\Repository.cs:line 55
+   at Pizzerito.Controllers.OrderController.Get(String status, DateTime startDate, DateTime endDate) in C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\Controllers\OrderController.cs:line 50
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Pizzerito.Middlwares.RequestLocalizationCookiesMiddleware.InvokeAsync(HttpContext context) in C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\Middlwares\RequestLocalizationCookiesMiddleware.cs:line 44
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/order RequestId:80000091-0001-fb00-b63f-84710c7967bb, SpanId:|a422a04-4544da5557d126ee., TraceId:a422a04-4544da5557d126ee, ParentId:
+      Request finished in 40113.7445ms 500 text/plain
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Comments], [o].[OrderDate], [o].[OrderTotal], [o].[PaymentStatus], [o].[PhoneNumber], [o].[PickUpTime], [o].[PickupName], [o].[Status], [o].[TransactionId], [o].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FirstName], [t].[LastName]
+      FROM [OrderHeader] AS [o]
+      INNER JOIN (
+          SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+          FROM [AspNetUsers] AS [a]
+          WHERE [a].[Discriminator] = N'ApplicationUser'
+      ) AS [t] ON [o].[UserId] = [t].[Id]
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Find all ready, in progress submitted or payment pending orders
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Fiter orders by date: start-06.04.2021 0:00:00, end-17.09.2021 23:59:59
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (120ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (118ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (119ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Return all orders, returning HTTP 200 - OK
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.List`1[[Pizzerito.Models.ViewModels.OrderDetailsVM, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.OrderController.Get (Pizzerito) in 1634.6132ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/order RequestId:8000005b-0002-ee00-b63f-84710c7967bb, SpanId:|a422a06-4544da5557d126ee., TraceId:a422a06-4544da5557d126ee, ParentId:
+      Request finished in 1687.8507ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Order/OrderList?status=null&start=2021-04-05T21%3a00%3a00.000Z&end=2021-09-17T20%3a59%3a59.999Z&culture=uk-UA  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Order/OrderList
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000005d-0002-ee00-b63f-84710c7967bb, SpanId:|a422a07-4544da5557d126ee., TraceId:a422a07-4544da5557d126ee, ParentId:
+      Request finished in 140.3254ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/order?status=null&startDate=2021-04-05T21:00:00.000Z&endDate=2021-09-17T20:59:59.999Z&_=1629975973952  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId:
+      Request GET: /api/order
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Order", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, System.DateTime, System.DateTime) on controller Pizzerito.Controllers.OrderController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Enter /api/order
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Comments], [o].[OrderDate], [o].[OrderTotal], [o].[PaymentStatus], [o].[PhoneNumber], [o].[PickUpTime], [o].[PickupName], [o].[Status], [o].[TransactionId], [o].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FirstName], [t].[LastName]
+      FROM [OrderHeader] AS [o]
+      INNER JOIN (
+          SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+          FROM [AspNetUsers] AS [a]
+          WHERE [a].[Discriminator] = N'ApplicationUser'
+      ) AS [t] ON [o].[UserId] = [t].[Id]
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Find all ready, in progress submitted or payment pending orders
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Fiter orders by date: start-06.04.2021 0:00:00, end-17.09.2021 23:59:59
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (119ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (119ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (120ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Return all orders, returning HTTP 200 - OK
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.List`1[[Pizzerito.Models.ViewModels.OrderDetailsVM, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.OrderController.Get (Pizzerito) in 654.5736ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/order RequestId:8000005f-0002-ee00-b63f-84710c7967bb, SpanId:|a422a08-4544da5557d126ee., TraceId:a422a08-4544da5557d126ee, ParentId:
+      Request finished in 717.1693ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Order/OrderList?status=null&start=2021-04-05T21%3a00%3a00.000Z&end=2021-09-17T20%3a59%3a59.999Z&culture=ru-RU  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Order/OrderList
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache hit for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId: => /Admin/Order/OrderList
+      View lookup cache hit for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Order/OrderList RequestId:8000008f-0000-fb00-b63f-84710c7967bb, SpanId:|a422a09-4544da5557d126ee., TraceId:a422a09-4544da5557d126ee, ParentId:
+      Request finished in 102.9665ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/order?status=null&startDate=2021-04-05T21:00:00.000Z&endDate=2021-09-17T20:59:59.999Z&_=1629975980616  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId:
+      Request GET: /api/order
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Order", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, System.DateTime, System.DateTime) on controller Pizzerito.Controllers.OrderController (Pizzerito).
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Enter /api/order
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (121ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Comments], [o].[OrderDate], [o].[OrderTotal], [o].[PaymentStatus], [o].[PhoneNumber], [o].[PickUpTime], [o].[PickupName], [o].[Status], [o].[TransactionId], [o].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Discriminator], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[FirstName], [t].[LastName]
+      FROM [OrderHeader] AS [o]
+      INNER JOIN (
+          SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+          FROM [AspNetUsers] AS [a]
+          WHERE [a].[Discriminator] = N'ApplicationUser'
+      ) AS [t] ON [o].[UserId] = [t].[Id]
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Find all ready, in progress submitted or payment pending orders
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Fiter orders by date: start-06.04.2021 0:00:00, end-17.09.2021 23:59:59
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (120ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (127ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed DbCommand (122ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Pizzerito.Controllers.OrderController[0]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Return all orders, returning HTTP 200 - OK
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.List`1[[Pizzerito.Models.ViewModels.OrderDetailsVM, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId: => Pizzerito.Controllers.OrderController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.OrderController.Get (Pizzerito) in 625.6058ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/order RequestId:80000091-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0a-4544da5557d126ee., TraceId:a422a0a-4544da5557d126ee, ParentId:
+      Request finished in 673.753ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Order/ManageOrder  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Order/ManageOrder
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Executed DbCommand (120ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Comments], [o].[OrderDate], [o].[OrderTotal], [o].[PaymentStatus], [o].[PhoneNumber], [o].[PickUpTime], [o].[PickupName], [o].[Status], [o].[TransactionId], [o].[UserId]
+      FROM [OrderHeader] AS [o]
+      WHERE ([o].[Status] = N'Submitted') OR ([o].[Status] = N'Being Prepared')
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Executed DbCommand (121ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Executed DbCommand (121ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Executed DbCommand (120ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      Executed DbCommand (122ms) [Parameters=[@__item_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT [o].[Id], [o].[Count], [o].[Description], [o].[Name], [o].[OrderId], [o].[PizzaTypeID], [o].[Price]
+      FROM [OrderDetails] AS [o]
+      WHERE [o].[OrderId] = @__item_Id_0
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId: => /Admin/Order/ManageOrder
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Order/ManageOrder RequestId:80000093-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0b-4544da5557d126ee., TraceId:a422a0b-4544da5557d126ee, ParentId:
+      Request finished in 1003.4504ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/js/countTimer.js RequestId:8000009b-0003-f200-b63f-84710c7967bb, SpanId:|a422a0c-4544da5557d126ee., TraceId:a422a0c-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/js/countTimer.js  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/js/countTimer.js RequestId:8000009b-0003-f200-b63f-84710c7967bb, SpanId:|a422a0c-4544da5557d126ee., TraceId:a422a0c-4544da5557d126ee, ParentId:
+      Request GET: /js/countTimer.js
+
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      => RequestPath:/js/countTimer.js RequestId:8000009b-0003-f200-b63f-84710c7967bb, SpanId:|a422a0c-4544da5557d126ee., TraceId:a422a0c-4544da5557d126ee, ParentId:
+      Sending file. Request path: '/js/countTimer.js'. Physical path: 'C:\Users\natai\Downloads\Pizzaritto\Pizzaritto\Pizzerito\Pizzerito\wwwroot\js\countTimer.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/js/countTimer.js RequestId:8000009b-0003-f200-b63f-84710c7967bb, SpanId:|a422a0c-4544da5557d126ee., TraceId:a422a0c-4544da5557d126ee, ParentId:
+      Request finished in 59.3412ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Toppings RequestId:80000061-0002-ee00-b63f-84710c7967bb, SpanId:|a422a0d-4544da5557d126ee., TraceId:a422a0d-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Toppings  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Toppings RequestId:80000061-0002-ee00-b63f-84710c7967bb, SpanId:|a422a0d-4544da5557d126ee., TraceId:a422a0d-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Toppings
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Toppings RequestId:80000061-0002-ee00-b63f-84710c7967bb, SpanId:|a422a0d-4544da5557d126ee., TraceId:a422a0d-4544da5557d126ee, ParentId: => /Admin/Toppings/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Toppings RequestId:80000061-0002-ee00-b63f-84710c7967bb, SpanId:|a422a0d-4544da5557d126ee., TraceId:a422a0d-4544da5557d126ee, ParentId: => /Admin/Toppings/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Toppings RequestId:80000061-0002-ee00-b63f-84710c7967bb, SpanId:|a422a0d-4544da5557d126ee., TraceId:a422a0d-4544da5557d126ee, ParentId:
+      Request finished in 174.3973ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/toppings?_=1629975989648  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId:
+      Request GET: /api/toppings
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Toppings", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.ToppingsController (Pizzerito).
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.ToppingsController[0]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Enter /api/toppings
+info: Pizzerito.Controllers.ToppingsController[0]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Return all Toppings, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executed DbCommand (120ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name], [t].[ToppingTypeId], [t0].[Id], [t0].[Name]
+      FROM [Toppings] AS [t]
+      INNER JOIN [ToppingType] AS [t0] ON [t].[ToppingTypeId] = [t0].[Id]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.Toppings, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.ToppingsController.Get (Pizzerito) in 207.5909ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/toppings RequestId:80000092-0001-f800-b63f-84710c7967bb, SpanId:|a422a0e-4544da5557d126ee., TraceId:a422a0e-4544da5557d126ee, ParentId:
+      Request finished in 249.6081ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Toppings RequestId:80000095-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0f-4544da5557d126ee., TraceId:a422a0f-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Toppings?culture=uk-UA  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Toppings RequestId:80000095-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0f-4544da5557d126ee., TraceId:a422a0f-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Toppings
+
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Toppings RequestId:80000095-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0f-4544da5557d126ee., TraceId:a422a0f-4544da5557d126ee, ParentId: => /Admin/Toppings/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Toppings RequestId:80000095-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0f-4544da5557d126ee., TraceId:a422a0f-4544da5557d126ee, ParentId: => /Admin/Toppings/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Toppings RequestId:80000095-0000-fb00-b63f-84710c7967bb, SpanId:|a422a0f-4544da5557d126ee., TraceId:a422a0f-4544da5557d126ee, ParentId:
+      Request finished in 68.4477ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/toppings?_=1629975995473  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId:
+      Request GET: /api/toppings
+
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[3]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Route matched with {action = "Get", controller = "Toppings", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Pizzerito.Controllers.ToppingsController (Pizzerito).
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Entity Framework Core 3.1.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Pizzerito.Controllers.ToppingsController[0]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Enter /api/toppings
+info: Pizzerito.Controllers.ToppingsController[0]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Return all Toppings, returning HTTP 200 - OK
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executed DbCommand (132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [t].[Name], [t].[ToppingTypeId], [t0].[Id], [t0].[Name]
+      FROM [Toppings] AS [t]
+      INNER JOIN [ToppingType] AS [t0] ON [t].[ToppingTypeId] = [t0].[Id]
+info: Microsoft.AspNetCore.Mvc.Infrastructure.SystemTextJsonResultExecutor[1]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executing JsonResult, writing value of type '<>f__AnonymousType9`1[[System.Collections.Generic.IEnumerable`1[[Pizzerito.Models.Toppings, Pizzerito.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[2]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId: => Pizzerito.Controllers.ToppingsController.Get (Pizzerito)
+      Executed action Pizzerito.Controllers.ToppingsController.Get (Pizzerito) in 284.2639ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/api/toppings RequestId:80000097-0000-fb00-b63f-84710c7967bb, SpanId:|a422a10-4544da5557d126ee., TraceId:a422a10-4544da5557d126ee, ParentId:
+      Request finished in 327.4259ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/Admin/Category  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId:
+      Request GET: /Admin/Category
+
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId: => /Admin/Category/Index
+      Authorization was successful.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId: => /Admin/Category/Index
+      View lookup cache miss for view '_Layout' in controller '(null)'.
+dbug: Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine[1]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId: => /Admin/Category/Index
+      View lookup cache miss for view '_LoginPartial' in controller '(null)'.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      => RequestPath:/Admin/Category RequestId:80000099-0000-fb00-b63f-84710c7967bb, SpanId:|a422a11-4544da5557d126ee., TraceId:a422a11-4544da5557d126ee, ParentId:
+      Request finished in 114.0608ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      => RequestPath:/api/category RequestId:80000094-0001-f800-b63f-84710c7967bb, SpanId:|a422a12-4544da5557d126ee., TraceId:a422a12-4544da5557d126ee, ParentId:
+      Request starting HTTP/2.0 GET https://localhost:44355/api/category?_=1629976007784  
+info: Pizzerito.Middlwares.HttpRequestBodyMiddleware[0]
+      => RequestPath:/api/category RequestId:80000094-0001-f800-b63f-84710c7967bb, SpanId:|a422a12-4544da5557d126ee., TraceId:a422a12-4544da5557d126ee, ParentId:
+      Request GET: /api/category
+
+info: Microsoft
