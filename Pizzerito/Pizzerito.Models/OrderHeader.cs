@@ -1,9 +1,7 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Pizzerito.Models
 {
@@ -26,11 +24,11 @@ namespace Pizzerito.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         [Display(Name = "Order Total")]
         public double OrderTotal { get; set; }
-        
+
         [Required]
         [Display(Name = "Pick Up Time")]
-        public DateTime PickUpTime { get; set; } 
-        
+        public DateTime PickUpTime { get; set; }
+
         [Display(Name = "Pickup Name")]
         public string PickupName { get; set; }
 

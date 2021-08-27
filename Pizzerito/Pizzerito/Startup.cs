@@ -1,26 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Pizzerito.DataAccess;
-using Pizzerito.DataAccess.Data.Repository.IRepository;
+using Pizzerito.DataAccess.Data.Initializer;
 using Pizzerito.DataAccess.Data.Repository;
+using Pizzerito.DataAccess.Data.Repository.IRepository;
+using Pizzerito.Middlwares;
 using Pizzerito.Utility;
 using Stripe;
-using Pizzerito.DataAccess.Data.Initializer;
-using Pizzerito.Middlwares;
-using Microsoft.AspNetCore.Mvc.Razor;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.Options;
 
 namespace Pizzerito
 {
@@ -37,10 +34,11 @@ namespace Pizzerito
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("ApplicationDatabase")));
-          
+
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -55,14 +53,15 @@ namespace Pizzerito
             services
                 .AddMvc(options => options.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0)
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; });
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, opts => { opts.ResourcesPath = "Resources"; });// add localization
 
             CultureInfo[] supportedCultures = new[]
             {
                 new CultureInfo("en-US"),
                 new CultureInfo("ru-RU"),
                 new CultureInfo("uk-UA")
-            };
+            }; // add cultures
+
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 options.DefaultRequestCulture = new RequestCulture("en-US");
@@ -120,8 +119,6 @@ namespace Pizzerito
         {
             app.UseMiddleware<HttpRequestBodyMiddleware>();
             app.UseMiddleware<UnhandledExceptionMiddleware>();
-           
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -133,8 +130,6 @@ namespace Pizzerito
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //added session 

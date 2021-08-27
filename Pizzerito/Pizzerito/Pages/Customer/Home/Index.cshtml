@@ -79,7 +79,11 @@
                                                     }
 
                                                     <li class="list-group-item border-0"><p class="card-title"><b>@SharedLocalizer[@menuItem.Name]</b></p></li>
-                                                    <li class="list-group-item border-0"><div class="text-left font-weight-light text-primary h5"><b> @(menuItem.Price.ToString("C", CultureInfo.CurrentCulture))</b></div></li>
+                                                    <li class="list-group-item border-0">
+                                                        <div class="text-left font-weight-light text-primary h5">
+                                                            <b>@(menuItem.Price.ToString("C", CultureInfo.CurrentCulture))</b>
+                                                         </div>
+                                                    </li>
                                                 </ul>
                                                 <a asp-page="Details" class=" btn-product red mt-auto text-center text-nowrap text-decoration-none" asp-route-id="@menuItem.Id"> @Localizer["Details"]</a>
                                             </div>

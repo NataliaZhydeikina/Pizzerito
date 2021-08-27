@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Pizzerito.Models;
 using Pizzerito.Utility;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Pizzerito.DataAccess.Data.Initializer
 {
@@ -15,18 +14,20 @@ namespace Pizzerito.DataAccess.Data.Initializer
         private readonly ApplicationDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ILogger _logger;
 
-        public DbInitializer(ApplicationDbContext db, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public DbInitializer(ApplicationDbContext db, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, ILogger<DbInitializer> logger)
         {
             _db = db;
             _roleManager = roleManager;
             _userManager = userManager;
+            _logger = logger;
         }
 
 
         public void Initialize()
         {
-         
+
 
             try
             {
@@ -37,8 +38,9 @@ namespace Pizzerito.DataAccess.Data.Initializer
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
             }
-       
+
             if (_db.Roles.Any(r => r.Name == SD.ManagerRole)) return;
 
             _roleManager.CreateAsync(new IdentityRole(SD.ManagerRole)).GetAwaiter().GetResult();

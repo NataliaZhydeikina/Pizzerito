@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using Pizzerito.DataAccess.Data.Repository.IRepository;
+﻿using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Pizzerito.DataAccess.Data.Repository
 {

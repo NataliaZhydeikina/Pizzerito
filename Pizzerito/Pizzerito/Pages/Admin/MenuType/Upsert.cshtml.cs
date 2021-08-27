@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +5,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models.ViewModels;
 using Pizzerito.Utility;
+using System;
+using System.IO;
 
 namespace Pizzerito.Pages.Admin.PizzaType
 {
@@ -37,7 +34,7 @@ namespace Pizzerito.Pages.Admin.PizzaType
 
             PizzaTypeObj = new PizzaTypeVM
             {
-                
+
                 CategoryList = _unitOfWork.Category.GetCategoryListForDropDown(),
                 ToppingTypeList = _unitOfWork.ToppingType.GetToppingTypeListForDropDown(),
                 ToppingsList = _unitOfWork.Toppings.GetToppingListForDropDown(),

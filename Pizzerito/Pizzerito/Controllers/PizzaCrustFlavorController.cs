@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
-using Pizzerito.Utility;
-using Microsoft.Extensions.Localization;
 using Pizzerito.Models;
-using Microsoft.AspNetCore.Mvc.Localization;
+using Pizzerito.Utility;
+using System.Linq;
 
 namespace Pizzerito.Controllers
 {
@@ -48,8 +43,8 @@ namespace Pizzerito.Controllers
                 _logger.LogError($"Error while deleting PizzaCrustFlavor with id {id}");
                 return Json(new { success = false, message = "Error while deleting" });
             }
-                _unitOfWork.PizzaCrustFlavor.Remove(objFromDb);
-                _unitOfWork.Save();
+            _unitOfWork.PizzaCrustFlavor.Remove(objFromDb);
+            _unitOfWork.Save();
             _logger.LogInformation($"Delete PizzaCrustFlavor with id {id}, returning HTTP 200 - OK");
             return Json(new { success = true, message = "Delete successful" });
         }

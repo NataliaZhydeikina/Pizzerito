@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Pizzerito.Models;
 
@@ -15,11 +12,11 @@ namespace Pizzerito.DataAccess
 
         }
 
-      /* protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-        */
+        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
+          {
+              base.OnModelCreating(modelBuilder);
+          }
+          */
 
         public DbSet<Category> Category { get; set; }
         public DbSet<Toppings> Toppings { get; set; }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
-using Pizzerito.Models;
+using System.Linq;
 
 namespace Pizzerito.Controllers
 {
@@ -31,11 +26,15 @@ namespace Pizzerito.Controllers
         {
             _logger.LogInformation($"Enter /api/toppings");
             _logger.LogInformation($"Return all Toppings, returning HTTP 200 - OK");
-            return Json(new { data = _unitOfWork.Toppings.GetAll(null, null, "ToppingType").Select(topping => {
-                topping.Name = _sharedLocalizer[topping.Name];
-                topping.ToppingType.Name = _sharedLocalizer[topping.ToppingType.Name];
-                return topping;
-                }) });
+            return Json(new
+            {
+                data = _unitOfWork.Toppings.GetAll(null, null, "ToppingType").Select(topping =>
+                {
+                    topping.Name = _sharedLocalizer[topping.Name];
+                    topping.ToppingType.Name = _sharedLocalizer[topping.ToppingType.Name];
+                    return topping;
+                })
+            });
         }
 
         [HttpDelete("{id}")]

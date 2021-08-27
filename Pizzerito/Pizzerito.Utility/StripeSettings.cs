@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pizzerito.Utility
+﻿namespace Pizzerito.Utility
 {
     public class StripeSettings
     {

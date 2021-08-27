@@ -2,19 +2,17 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Pizzerito.Middlwares
 {
-    public class RequestLocalizationCookiesMiddleware 
+    public class RequestLocalizationCookiesMiddleware
     {
         public CookieRequestCultureProvider Provider { get; }
         private readonly RequestDelegate next;
-
-        public RequestLocalizationCookiesMiddleware(IOptions<RequestLocalizationOptions> requestLocalizationOptions, RequestDelegate next)
+        public RequestLocalizationCookiesMiddleware(IOptions<RequestLocalizationOptions>
+            requestLocalizationOptions, RequestDelegate next)
         {
             this.next = next;
             Provider =
@@ -25,7 +23,6 @@ namespace Pizzerito.Middlwares
                     .Cast<CookieRequestCultureProvider>()
                     .FirstOrDefault();
         }
-
         public async Task InvokeAsync(HttpContext context)
         {
             if (Provider != null)
@@ -37,10 +34,11 @@ namespace Pizzerito.Middlwares
                     // remember culture across request
                     context.Response
                         .Cookies
-                        .Append(Provider.CookieName, CookieRequestCultureProvider.MakeCookieValue(feature.RequestCulture));
+                        .Append(Provider.CookieName,
+                        CookieRequestCultureProvider
+                        .MakeCookieValue(feature.RequestCulture));
                 }
             }
-
             await next(context);
         }
     }

@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Pizzerito.DataAccess.Data.Repository
 {
@@ -33,7 +31,7 @@ namespace Pizzerito.DataAccess.Data.Repository
 
             objFromDb.CrustType = pizzaCrustType.CrustType;
             objFromDb.CrustTypeDescription = pizzaCrustType.CrustTypeDescription;
-            
+
 
             _db.SaveChanges();
         }

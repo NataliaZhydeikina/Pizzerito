@@ -1,8 +1,4 @@
 ﻿using Pizzerito.DataAccess.Data.Repository.IRepository;
-using Pizzerito.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Pizzerito.DataAccess.Data.Repository
 {
@@ -27,8 +23,8 @@ namespace Pizzerito.DataAccess.Data.Repository
         }
 
         // DO NOT set outside of this 
-        public ICategoryRepository Category { get; private set; } 
-        public IToppingsRepository Toppings { get; private set; } 
+        public ICategoryRepository Category { get; private set; }
+        public IToppingsRepository Toppings { get; private set; }
         public IToppingTypeRepository ToppingType { get; private set; }
         public IPizzaCrustTypeRepository PizzaCrustType { get; private set; }
         public IPizzaCrustFlavorRepository PizzaCrustFlavor { get; private set; }
@@ -36,7 +32,7 @@ namespace Pizzerito.DataAccess.Data.Repository
         public IPizzaTypeRepository PizzaType { get; private set; }
         public IApplicationUserRepository ApplicationUser { get; private set; }
         public IShoppingCartRepository ShoppingCart { get; private set; }
-         public IOrderHeaderRepository OrderHeader { get; private set; }
+        public IOrderHeaderRepository OrderHeader { get; private set; }
         public IOrderDetailsRepository OrderDetails { get; private set; }
 
         //Implement Save()

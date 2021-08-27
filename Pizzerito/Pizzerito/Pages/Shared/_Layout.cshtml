@@ -180,8 +180,9 @@
                                 var currentParams = System.Web.HttpUtility.ParseQueryString(Context.Request.QueryString.Value);
                                 currentParams.Remove("culture");
 
-
-                                var url = currentParams.Count>0? string.Format("{0}?{1}&culture={2}", Context.Request.Path, string.Join("&", currentParams), culture.Value): string.Format("{0}?culture={1}", Context.Request.Path, culture.Value);
+                                var url = currentParams.Count>0? 
+                                    string.Format("{0}?{1}&culture={2}", Context.Request.Path, string.Join("&", currentParams), culture.Value):
+                                    string.Format("{0}?culture={1}", Context.Request.Path, culture.Value);
                                 <a class="dropdown-item text-white" href="@url">@culture.Text</a>
                             }
                         </div>

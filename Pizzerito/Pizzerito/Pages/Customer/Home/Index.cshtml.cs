@@ -1,14 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Utility;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 
 namespace Pizzerito.Pages.Customer.Home
 {

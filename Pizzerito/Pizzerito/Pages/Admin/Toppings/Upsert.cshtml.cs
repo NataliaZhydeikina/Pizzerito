@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
@@ -69,7 +64,7 @@ namespace Pizzerito.Pages.Admin.Toppings
 
                 _unitOfWork.Toppings.Update(ToppingsItemObj.Toppings);
             }
-             _unitOfWork.Save();
+            _unitOfWork.Save();
             return RedirectToPage("./Index");
         }
     }

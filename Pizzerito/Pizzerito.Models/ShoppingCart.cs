@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Pizzerito.Models
 {
@@ -25,8 +23,8 @@ namespace Pizzerito.Models
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Display(Name ="Qty")]
-        [Range(1,20, ErrorMessage = "You can not have less than 1 or greater than 20 items.")]
+        [Display(Name = "Qty")]
+        [Range(1, 20, ErrorMessage = "You can not have less than 1 or greater than 20 items.")]
         public int Count { get; set; }
     }
 }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Utility;
+using System.Linq;
 
 namespace Pizzerito.Controllers
 {
@@ -34,7 +30,7 @@ namespace Pizzerito.Controllers
         {
             _logger.LogInformation($"Enter /api/pizzasize");
             _logger.LogInformation($"Return all PizzaSize, returning HTTP 200 - OK");
-            return Json(new { data = _unitOfWork.PizzaSize.GetAll().Select(pizzaSize => new PizzaSize { Id=pizzaSize.Id, Size=_sharedLocalizer[pizzaSize.Size]}) });
+            return Json(new { data = _unitOfWork.PizzaSize.GetAll().Select(pizzaSize => new PizzaSize { Id = pizzaSize.Id, Size = _sharedLocalizer[pizzaSize.Size] }) });
         }
 
         [HttpDelete("{id}")]

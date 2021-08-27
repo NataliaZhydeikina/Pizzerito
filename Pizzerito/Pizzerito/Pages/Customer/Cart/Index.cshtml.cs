@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +6,10 @@ using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 
 namespace Pizzerito.Pages.Customer.Cart
 {
@@ -33,8 +32,8 @@ namespace Pizzerito.Pages.Customer.Cart
         {
             OrderDetailsCartVM = new OrderDetailsCartVM()
             {
-                OrderHeader = new Models.OrderHeader(),
-                listCart = new List<ShoppingCart>()
+                OrderHeader = new OrderHeader(),
+                ListCart = new List<ShoppingCart>()
             };
 
             //Initialize OrderTotal to 0;
@@ -51,10 +50,10 @@ namespace Pizzerito.Pages.Customer.Cart
 
                 if (cart != null)
                 {
-                    OrderDetailsCartVM.listCart = cart.ToList();
+                    OrderDetailsCartVM.ListCart = cart.ToList();
                 }
 
-                foreach (var cartList in OrderDetailsCartVM.listCart)
+                foreach (var cartList in OrderDetailsCartVM.ListCart)
                 {
                     cartList.PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(m => m.Id == cartList.PizzaTypeId);
                     cartList.PizzaType.Category = _unitOfWork.Category.GetFirstOrDefault(c => c.Id == cartList.PizzaType.CategoryId);

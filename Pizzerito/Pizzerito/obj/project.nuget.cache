@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "COWn38YCd66Vmg1GA6VGzDAito0FFQPfO6E9u9BQzdms+SgBaVEri9HUAX3UviuxMwu8UJGcL7JkZGiz/Q09oA==",
+  "dgSpecHash": "lUzza1vpA9xlXGBtY5BfCZMl5ukhS8/u1LGpZinW+D1nRwpa+oQo0Hh9o/Dy+NMWAVE9D0OhPeYg4tBsQ46T0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\natai\\Downloads\\Pizzaritto\\Pizzaritto\\Pizzerito\\Pizzerito\\Pizzerito.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,7 @@
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.common\\3.3.1\\microsoft.codeanalysis.common.3.3.1.nupkg.sha512",
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.csharp\\3.3.1\\microsoft.codeanalysis.csharp.3.3.1.nupkg.sha512",
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\3.3.1\\microsoft.codeanalysis.csharp.workspaces.3.3.1.nupkg.sha512",
+    "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.metrics\\3.3.0\\microsoft.codeanalysis.metrics.3.3.0.nupkg.sha512",
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.razor\\3.1.9\\microsoft.codeanalysis.razor.3.1.9.nupkg.sha512",
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\3.3.1\\microsoft.codeanalysis.workspaces.common.3.3.1.nupkg.sha512",
     "C:\\Users\\natai\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

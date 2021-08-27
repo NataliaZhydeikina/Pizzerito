@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Pizzerito.Utility
+﻿namespace Pizzerito.Utility
 {
     public static class SD
     {

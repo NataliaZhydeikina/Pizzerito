@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +5,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
 using Pizzerito.Models;
 using Pizzerito.Utility;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 
 namespace Pizzerito.Pages.Customer.Home
 {
@@ -36,7 +34,7 @@ namespace Pizzerito.Pages.Customer.Home
                 PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(includeProperties: "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize", filter: c => c.Id == id),
                 PizzaTypeId = id
             };
-            
+
             PizzaTypeList = _unitOfWork.PizzaType
                .GetAll(null, q => q.OrderBy(c => c.PizzaSize.Size), "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize");
             ToppingsList = _unitOfWork.Toppings.GetAll(null, q => q.OrderBy(c => c.Id), null);
@@ -55,15 +53,15 @@ namespace Pizzerito.Pages.Customer.Home
 
                 ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(c => c.ApplicationUserId == ShopingCartObj.ApplicationUserId &&
                                           c.PizzaTypeId == ShopingCartObj.PizzaTypeId);
-                
+
                 if (cartFromDb == null) // add new item to cart 
                 {
                     _unitOfWork.ShoppingCart.Add(ShopingCartObj);
-                    
+
                 }
                 else // if object exists increment count of object 
                 {
-                    
+
                     _unitOfWork.ShoppingCart.IncrementCount(cartFromDb, ShopingCartObj.Count);
                 }
                 _unitOfWork.Save();
@@ -74,8 +72,8 @@ namespace Pizzerito.Pages.Customer.Home
             }
             else
             {
-               ShopingCartObj.PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(includeProperties: "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize", filter: c => c.Id == ShopingCartObj.PizzaTypeId);
-               return Page();
+                ShopingCartObj.PizzaType = _unitOfWork.PizzaType.GetFirstOrDefault(includeProperties: "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize", filter: c => c.Id == ShopingCartObj.PizzaTypeId);
+                return Page();
             }
         }
     }

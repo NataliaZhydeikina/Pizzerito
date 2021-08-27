@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Pizzerito.Models
 {
     public class OrderDetailsCartVM
     {
-        public List<ShoppingCart> listCart { get; set; }
+        public List<ShoppingCart> ListCart { get; set; }
         public OrderHeader OrderHeader { get; set; }
     }
 }

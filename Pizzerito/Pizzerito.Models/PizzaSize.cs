@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Pizzerito.Models
 {
@@ -10,7 +7,7 @@ namespace Pizzerito.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [Display(Name ="Pizza Size")]
+        [Display(Name = "Pizza Size")]
         public string Size { get; set; }
 
     }

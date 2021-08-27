@@ -36,6 +36,7 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.9",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.9",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.2.0",
+          "Microsoft.CodeAnalysis.Metrics": "3.3.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.9",
           "Microsoft.Extensions.Configuration.AzureKeyVault": "3.1.10",
@@ -1095,6 +1096,7 @@
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {}
         }
       },
+      "Microsoft.CodeAnalysis.Metrics/3.3.0": {},
       "Microsoft.CodeAnalysis.Razor/3.1.9": {
         "dependencies": {
           "Microsoft.AspNetCore.Razor.Language": "3.1.9",
@@ -5098,6 +5100,13 @@
       "sha512": "sha512-dHs/UyfLgzsVC4FjTi/x+H+yQifgOnpe3rSN8GwkHWjnidePZ3kSqr1JHmFDf5HTQEydYwrwCAfQ0JSzhsEqDA==",
       "path": "microsoft.codeanalysis.csharp.workspaces/3.3.1",
       "hashPath": "microsoft.codeanalysis.csharp.workspaces.3.3.1.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Metrics/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aiPgJecWPkwTZ18hkkPHPjNhXAoEuIF2MAATXYh1g/JdqH6I8ltyS2+d/n7EHNeL6S45Eu3HIyK6gUqcIncTRQ==",
+      "path": "microsoft.codeanalysis.metrics/3.3.0",
+      "hashPath": "microsoft.codeanalysis.metrics.3.3.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Razor/3.1.9": {
       "type": "package",

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Pizzerito.DataAccess.Data.Repository.IRepository;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace Pizzerito.Controllers
 {
@@ -38,14 +35,15 @@ namespace Pizzerito.Controllers
             return Json(new
             {
                 data = _unitOfWork.PizzaType
-                .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize").Select(pizzaType => {
+                .GetAll(null, null, "Category,ToppingType,PizzaCrustType,PizzaCrustFlavor,PizzaSize").Select(pizzaType =>
+                {
                     pizzaType.Name = _sharedLocalizer[pizzaType.Name];
                     pizzaType.Description = _sharedLocalizer[pizzaType.Description];
                     pizzaType.Category.Name = _sharedLocalizer[pizzaType.Category.Name];
                     pizzaType.ToppingType.Name = _sharedLocalizer[pizzaType.ToppingType.Name];
                     pizzaType.PizzaSize.Size = _sharedLocalizer[pizzaType.PizzaSize.Size];
                     return pizzaType;
-                  })
+                })
             });
 
         }
@@ -74,7 +72,7 @@ namespace Pizzerito.Controllers
                 _logger.LogInformation($"Delete image from root");
             }
             catch (Exception ex)
-            { 
+            {
                 _logger.LogError($"Error while deleting menu type, {ex.Message} {ex.Data}");
                 return Json(new { success = true, message = "Error while deleting" });
             }
